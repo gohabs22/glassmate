@@ -25,9 +25,14 @@
 - [ ] **MATCH-02**: App ranks host's available glasses from best to worst fit for the selected beer
 
 ### Onboarding & UX
-- [ ] **UX-01**: App opens with role selection: "I'm a Host" vs "I'm a Drinker"
+- [ ] **UX-01**: Logged-in users see a home screen hub with "Manage My Glasses" and "Check In Somewhere"; anonymous users go straight to drinker/scan flow
 - [ ] **UX-02**: Host sees a guided setup wizard (create account → add first glasses)
 - [ ] **UX-03**: App includes a visual glass type reference guide with names and descriptions
+- [ ] **UX-04**: Logged-in user can check in at another host's place as a drinker (dual-role support)
+
+### Beer History
+- [ ] **HIST-01**: App records which beers a logged-in drinker has selected at each visit
+- [ ] **HIST-02**: Logged-in user can view their beer drinking history
 
 ---
 
@@ -41,6 +46,8 @@
 - Deep link / Universal Link support for QR codes
 - Web fallback page for drinkers without app
 - Pairing explanation text ("why this glass")
+- Check-in history (which host visited, when)
+- Recommended glass history per visit
 
 ---
 
@@ -74,6 +81,9 @@
 | UX-01 | Phase 2 | — | Pending |
 | UX-02 | Phase 2 | — | Pending |
 | UX-03 | Phase 3 | — | Pending |
+| UX-04 | Phase 4 | — | Pending |
+| HIST-01 | Phase 6 | — | Pending |
+| HIST-02 | Phase 6 | — | Pending |
 
 ---
-*Last updated: 2026-02-05 after roadmap creation*
+*Last updated: 2026-02-05 after adding dual-role and beer history requirements*

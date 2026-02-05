@@ -35,14 +35,15 @@ Plans:
 - [ ] 01-01: [To be planned]
 
 ### Phase 2: Role Selection & Authentication
-**Goal**: Users can choose their role and hosts can create and manage accounts
+**Goal**: Users can create accounts and navigate a home screen hub that supports both hosting and drinking roles
 **Depends on**: Phase 1
 **Requirements**: AUTH-01, AUTH-02, UX-01, UX-02
 **Success Criteria** (what must be TRUE):
-  1. User sees role selection screen on first launch ("I'm a Host" vs "I'm a Drinker")
-  2. Host can create an account with email and password
-  3. Host can log in and stay logged in across app sessions
-  4. Host sees guided setup wizard after account creation (ready for glass setup)
+  1. Logged-in users see a home screen hub with "Manage My Glasses" and "Check In Somewhere" options
+  2. Anonymous users (no account) go straight to drinker/scan flow
+  3. Host can create an account with email and password
+  4. Host can log in and stay logged in across app sessions
+  5. Host sees guided setup wizard after account creation (ready for glass setup)
 **Plans**: TBD
 
 Plans:
@@ -64,14 +65,15 @@ Plans:
 - [ ] 03-01: [To be planned]
 
 ### Phase 4: QR Check-in Flow
-**Goal**: Hosts can generate QR codes and drinkers can check in to access host collections
+**Goal**: Hosts can generate QR codes and drinkers (anonymous or logged-in) can check in to access host collections
 **Depends on**: Phase 3
-**Requirements**: QR-01, QR-02
+**Requirements**: QR-01, QR-02, UX-04
 **Success Criteria** (what must be TRUE):
   1. Host can generate a unique QR code linked to their glass collection
   2. Host can view and share their QR code from the app
   3. Drinker can scan a host's QR code using their device camera
   4. After scanning, drinker's app loads the host's glass collection (ready for beer matching)
+  5. Logged-in user can check in at another host's place as a drinker (dual-role)
 **Plans**: TBD
 
 Plans:
@@ -91,14 +93,16 @@ Plans:
 - [ ] 05-01: [To be planned]
 
 ### Phase 6: Matching & Recommendations
-**Goal**: App matches selected beers to host glasses and displays ranked recommendations
+**Goal**: App matches selected beers to host glasses, displays ranked recommendations, and records beer history for logged-in users
 **Depends on**: Phase 5
-**Requirements**: MATCH-01, MATCH-02
+**Requirements**: MATCH-01, MATCH-02, HIST-01, HIST-02
 **Success Criteria** (what must be TRUE):
   1. App maps beer styles to ideal glass types using established pairing rules
   2. App compares selected beer style against host's available glasses
   3. App displays ranked list of host's glasses from best to worst fit for the selected beer
   4. Result screen shows recommended glass with beer name, style, ABV, and pairing rationale
+  5. App records beer selections for logged-in drinkers
+  6. Logged-in user can view their beer drinking history
 **Plans**: TBD
 
 Plans:
