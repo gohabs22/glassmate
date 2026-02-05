@@ -59,21 +59,21 @@
 
 | REQ-ID | Phase | Plan | Status |
 |--------|-------|------|--------|
-| AUTH-01 | — | — | Pending |
-| AUTH-02 | — | — | Pending |
-| GLASS-01 | — | — | Pending |
-| GLASS-02 | — | — | Pending |
-| GLASS-03 | — | — | Pending |
-| QR-01 | — | — | Pending |
-| QR-02 | — | — | Pending |
-| BEER-01 | — | — | Pending |
-| BEER-02 | — | — | Pending |
-| BEER-03 | — | — | Pending |
-| MATCH-01 | — | — | Pending |
-| MATCH-02 | — | — | Pending |
-| UX-01 | — | — | Pending |
-| UX-02 | — | — | Pending |
-| UX-03 | — | — | Pending |
+| AUTH-01 | Phase 2 | — | Pending |
+| AUTH-02 | Phase 2 | — | Pending |
+| GLASS-01 | Phase 3 | — | Pending |
+| GLASS-02 | Phase 3 | — | Pending |
+| GLASS-03 | Phase 3 | — | Pending |
+| QR-01 | Phase 4 | — | Pending |
+| QR-02 | Phase 4 | — | Pending |
+| BEER-01 | Phase 5 | — | Pending |
+| BEER-02 | Phase 5 | — | Pending |
+| BEER-03 | Phase 5 | — | Pending |
+| MATCH-01 | Phase 6 | — | Pending |
+| MATCH-02 | Phase 6 | — | Pending |
+| UX-01 | Phase 2 | — | Pending |
+| UX-02 | Phase 2 | — | Pending |
+| UX-03 | Phase 3 | — | Pending |
 
 ---
-*Last updated: 2026-02-05 after requirements definition*
+*Last updated: 2026-02-05 after roadmap creation*
