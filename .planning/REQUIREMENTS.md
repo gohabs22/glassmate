@@ -4,7 +4,7 @@
 
 ### Authentication
 - [ ] **AUTH-01**: Host can create an account with email and password
-- [ ] **AUTH-02**: Host can log in and stay logged in across app sessions
+- [ ] **AUTH-02**: Host can log in and stay logged in across browser sessions
 
 ### Glass Management
 - [ ] **GLASS-01**: Host can browse a visual list of standard glass types (pint, tulip, snifter, weizen, goblet, etc.)
@@ -13,7 +13,7 @@
 
 ### QR Check-in
 - [ ] **QR-01**: Host can generate a unique QR code linked to their glass collection
-- [ ] **QR-02**: Drinker can scan host's QR code to load the host's glass collection in the app
+- [ ] **QR-02**: Drinker can scan host's QR code to open host's collection page in browser
 
 ### Beer Lookup
 - [ ] **BEER-01**: Drinker can search for a beer by name
@@ -25,7 +25,7 @@
 - [ ] **MATCH-02**: App ranks host's available glasses from best to worst fit for the selected beer
 
 ### Onboarding & UX
-- [ ] **UX-01**: Logged-in users see a home screen hub with "Manage My Glasses" and "Check In Somewhere"; anonymous users go straight to drinker/scan flow
+- [ ] **UX-01**: Logged-in users see a dashboard with "Manage My Glasses" and "Check In Somewhere"; anonymous visitors go straight to drinker/scan flow
 - [ ] **UX-02**: Host sees a guided setup wizard (create account → add first glasses)
 - [ ] **UX-03**: App includes a visual glass type reference guide with names and descriptions
 - [ ] **UX-04**: Logged-in user can check in at another host's place as a drinker (dual-role support)
@@ -38,22 +38,23 @@
 
 ## v2 Requirements (Deferred)
 
-- Barcode scanning (camera UPC scan)
+- Native iOS app (Capacitor wrapper or native Swift)
+- Native Android app
+- Barcode scanning (camera UPC scan via browser API)
 - Beer data API integration (external UPC lookup)
 - Password reset via email
 - Glass quantity tracking
 - AI glass photo identification
-- Deep link / Universal Link support for QR codes
-- Web fallback page for drinkers without app
 - Pairing explanation text ("why this glass")
 - Check-in history (which host visited, when)
 - Recommended glass history per visit
+- PWA offline support
 
 ---
 
 ## Out of Scope
 
-- Android support — iOS-first, expand later
+- Native mobile apps — web-first, native is v2
 - Beer ratings/reviews — Untappd owns this space
 - Social feed / following — not a social network
 - Brewery finder / taproom locator — out of scope
@@ -86,4 +87,4 @@
 | HIST-02 | Phase 6 | — | Pending |
 
 ---
-*Last updated: 2026-02-05 after adding dual-role and beer history requirements*
+*Last updated: 2026-02-06 after platform pivot from iOS to web (Next.js + Firebase)*
