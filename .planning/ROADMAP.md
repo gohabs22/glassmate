@@ -29,10 +29,11 @@ Decimal phases appear between their surrounding integers in numeric order.
   1. Xcode project builds and runs on iOS simulator without errors
   2. Firebase is configured and connected (Auth, Firestore, Storage initialized)
   3. Basic SwiftUI navigation structure displays on app launch
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: [To be planned]
+- [ ] 01-01-PLAN.md -- Xcode project creation, folder structure, Firebase SPM integration, and app entry point
+- [ ] 01-02-PLAN.md -- NavigationStack-based navigation structure and build verification
 
 ### Phase 2: Role Selection & Authentication
 **Goal**: Users can create accounts and navigate a home screen hub that supports both hosting and drinking roles
@@ -115,7 +116,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Project Setup | 0/? | Not started | - |
+| 1. Project Setup | 0/2 | Planned | - |
 | 2. Role Selection & Authentication | 0/? | Not started | - |
 | 3. Glass Collection Management | 0/? | Not started | - |
 | 4. QR Check-in Flow | 0/? | Not started | - |
