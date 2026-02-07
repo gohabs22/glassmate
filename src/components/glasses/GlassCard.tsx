@@ -74,7 +74,7 @@ export default function GlassCard({
 
       {/* Glass name and description */}
       <div className="mb-4">
-        <h3 className="mb-1 text-lg font-semibold text-gray-900">
+        <h3 className="mb-1 truncate text-lg font-semibold text-gray-900" title={glass.name}>
           {glass.name}
         </h3>
         <p className="text-sm text-gray-600">{glass.description}</p>
