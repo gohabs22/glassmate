@@ -44,7 +44,7 @@ export default function DashboardPage() {
 
       <div className="grid gap-4 md:grid-cols-2">
         <Link
-          href="/dashboard/glasses"
+          href="/glasses"
           className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
         >
           <h2 className="mb-2 text-xl font-semibold text-gray-900">
@@ -65,6 +65,16 @@ export default function DashboardPage() {
           <p className="text-sm text-gray-600">
             Scan a QR code to see a host's glass collection
           </p>
+        </Link>
+      </div>
+
+      {/* Glass Guide Link */}
+      <div className="mt-6">
+        <Link
+          href="/glasses/guide"
+          className="font-medium text-amber-600 hover:text-amber-700"
+        >
+          View Glass Guide →
         </Link>
       </div>
 
