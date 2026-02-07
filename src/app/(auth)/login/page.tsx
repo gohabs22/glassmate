@@ -1,13 +1,13 @@
 import Link from 'next/link';
+import { LoginForm } from '@/components/auth/LoginForm';
 
 export default function LoginPage() {
   return (
     <div>
       <h1 className="mb-6 text-2xl font-bold text-gray-900">Log In</h1>
 
-      <div className="mb-6 rounded border border-gray-200 bg-gray-50 p-4">
-        {/* LoginForm goes here - wired in Plan 03 */}
-        <p className="text-sm text-gray-500">Login form will be added in Plan 03</p>
+      <div className="mb-6">
+        <LoginForm />
       </div>
 
       <p className="text-center text-sm text-gray-600">
