@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-02-06)
 ## Current Position
 
 Phase: 1 of 6 (Project Setup)
-Plan: 1 of 1 in current phase
+Plan: 2 of 2 in current phase
 Status: Phase complete
-Last activity: 2026-02-06 — Completed 01-01-PLAN.md (Next.js scaffolding)
+Last activity: 2026-02-07 — Completed 01-02-PLAN.md (Firebase integration)
 
-Progress: [█░░░░░░░░░] 10%
+Progress: [██░░░░░░░░] 20%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 1
-- Average duration: 13 min
-- Total execution time: 0.2 hours
+- Total plans completed: 2
+- Average duration: 8 min
+- Total execution time: 0.3 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-project-setup | 1 | 13 min | 13 min |
+| 01-project-setup | 2 | 16 min | 8 min |
 
 **Recent Trend:**
-- Last 5 plans: 13min
-- Trend: First plan complete
+- Last 5 plans: 13min, 3min
+- Trend: Improving velocity (3min vs 13min average)
 
 *Updated after each plan completion*
 
@@ -49,6 +49,9 @@ Recent decisions affecting current work:
 - Tailwind CSS v4 with @tailwindcss/postcss (CSS-based config, no tailwind.config.ts)
 - TypeScript strict mode with @ path alias for src imports
 - Server Components by default (client components only when needed)
+- Firebase singleton initialization pattern with getApps() guard prevents re-initialization bugs
+- Environment variables prefixed with NEXT_PUBLIC_ for client-side access
+- .env.example committed (template), .env.local gitignored (secrets)
 
 ### Pending Todos
 
@@ -60,6 +63,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-06
-Stopped at: Completed 01-01-PLAN.md (Next.js scaffolding)
+Last session: 2026-02-07
+Stopped at: Completed 01-02-PLAN.md (Firebase integration)
 Resume file: None
