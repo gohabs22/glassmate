@@ -1,0 +1,16 @@
+<svg viewBox="0 0 100 120" xmlns="http://www.w3.org/2000/svg">
+  <path
+    d="M 45 35 Q 35 50 35 70 Q 35 85 42 90 L 42 95 L 50 95 L 50 105 L 35 105 L 65 105 L 50 105 L 50 95 L 58 95 L 58 90 Q 65 85 65 70 Q 65 50 55 35 Q 52 25 50 25 Q 48 25 45 35 Z"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M 45 35 Q 50 30 55 35"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="2.5"
+    stroke-linecap="round"
+  />
