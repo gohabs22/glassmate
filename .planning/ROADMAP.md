@@ -62,10 +62,12 @@ Plans:
   3. Host can view their collection with all added glasses displayed
   4. Host can edit or remove glasses from their collection
   5. Site includes a visual glass type reference guide accessible from collection page
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 03-01: [To be planned]
+- [ ] 03-01-PLAN.md — Glass catalog data (8 types), SVG illustrations, Firestore security rules
+- [ ] 03-02-PLAN.md — Firestore DB operations and glass UI components
+- [ ] 03-03-PLAN.md — Route pages, public guide, dashboard navigation wiring
 
 ### Phase 4: QR Check-in Flow
 **Goal**: Hosts can generate QR codes and drinkers (anonymous or logged-in) can check in via URL to access host collections
@@ -120,7 +122,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Project Setup | 2/2 | ✓ Complete | 2026-02-06 |
 | 2. Role Selection & Authentication | 3/3 | ✓ Complete | 2026-02-07 |
-| 3. Glass Collection Management | 0/? | Not started | - |
+| 3. Glass Collection Management | 0/3 | Planned | - |
 | 4. QR Check-in Flow | 0/? | Not started | - |
 | 5. Beer Lookup | 0/? | Not started | - |
 | 6. Matching & Recommendations | 0/? | Not started | - |
