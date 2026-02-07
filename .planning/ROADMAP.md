@@ -14,7 +14,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Project Setup** - Next.js project scaffolding and Firebase backend configuration
 - [x] **Phase 2: Role Selection & Authentication** - User role choice and host account system
-- [ ] **Phase 3: Glass Collection Management** - Host glass library CRUD and reference guide
+- [x] **Phase 3: Glass Collection Management** - Host glass library CRUD and reference guide
 - [ ] **Phase 4: QR Check-in Flow** - QR code generation and drinker check-in via URL
 - [ ] **Phase 5: Beer Lookup** - Beer search by name or style with info display
 - [ ] **Phase 6: Matching & Recommendations** - Style-to-glass mapping and ranked recommendations
@@ -66,8 +66,8 @@ Plans:
 
 Plans:
 - [x] 03-01-PLAN.md — Glass catalog data (8 types), SVG illustrations, Firestore security rules
-- [ ] 03-02-PLAN.md — Firestore DB operations and glass UI components
-- [ ] 03-03-PLAN.md — Route pages, public guide, dashboard navigation wiring
+- [x] 03-02-PLAN.md — Firestore DB operations and glass UI components
+- [x] 03-03-PLAN.md — Route pages, public guide, dashboard navigation wiring
 
 ### Phase 4: QR Check-in Flow
 **Goal**: Hosts can generate QR codes and drinkers (anonymous or logged-in) can check in via URL to access host collections
@@ -122,7 +122,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Project Setup | 2/2 | ✓ Complete | 2026-02-06 |
 | 2. Role Selection & Authentication | 3/3 | ✓ Complete | 2026-02-07 |
-| 3. Glass Collection Management | 1/3 | In progress | - |
+| 3. Glass Collection Management | 3/3 | ✓ Complete | 2026-02-07 |
 | 4. QR Check-in Flow | 0/? | Not started | - |
 | 5. Beer Lookup | 0/? | Not started | - |
 | 6. Matching & Recommendations | 0/? | Not started | - |

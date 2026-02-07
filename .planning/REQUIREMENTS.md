@@ -7,9 +7,9 @@
 - [x] **AUTH-02**: Host can log in and stay logged in across browser sessions
 
 ### Glass Management
-- [ ] **GLASS-01**: Host can browse a visual list of standard glass types (pint, tulip, snifter, weizen, goblet, etc.)
-- [ ] **GLASS-02**: Host can add glass types from the list to their personal collection
-- [ ] **GLASS-03**: Host can edit or remove glasses from their collection
+- [x] **GLASS-01**: Host can browse a visual list of standard glass types (pint, tulip, snifter, weizen, goblet, etc.)
+- [x] **GLASS-02**: Host can add glass types from the list to their personal collection
+- [x] **GLASS-03**: Host can edit or remove glasses from their collection
 
 ### QR Check-in
 - [ ] **QR-01**: Host can generate a unique QR code linked to their glass collection
@@ -27,7 +27,7 @@
 ### Onboarding & UX
 - [x] **UX-01**: Logged-in users see a dashboard with "Manage My Glasses" and "Check In Somewhere"; anonymous visitors go straight to drinker/scan flow
 - [x] **UX-02**: Host sees a guided setup wizard (create account → add first glasses)
-- [ ] **UX-03**: App includes a visual glass type reference guide with names and descriptions
+- [x] **UX-03**: App includes a visual glass type reference guide with names and descriptions
 - [ ] **UX-04**: Logged-in user can check in at another host's place as a drinker (dual-role support)
 
 ### Beer History
@@ -69,9 +69,9 @@
 |--------|-------|------|--------|
 | AUTH-01 | Phase 2 | 02-01, 02-03 | Complete |
 | AUTH-02 | Phase 2 | 02-01, 02-03 | Complete |
-| GLASS-01 | Phase 3 | — | Pending |
-| GLASS-02 | Phase 3 | — | Pending |
-| GLASS-03 | Phase 3 | — | Pending |
+| GLASS-01 | Phase 3 | 03-01, 03-02, 03-03 | Complete |
+| GLASS-02 | Phase 3 | 03-02, 03-03 | Complete |
+| GLASS-03 | Phase 3 | 03-02, 03-03 | Complete |
 | QR-01 | Phase 4 | — | Pending |
 | QR-02 | Phase 4 | — | Pending |
 | BEER-01 | Phase 5 | — | Pending |
@@ -81,7 +81,7 @@
 | MATCH-02 | Phase 6 | — | Pending |
 | UX-01 | Phase 2 | 02-02, 02-03 | Complete |
 | UX-02 | Phase 2 | 02-03 | Complete |
-| UX-03 | Phase 3 | — | Pending |
+| UX-03 | Phase 3 | 03-01, 03-03 | Complete |
 | UX-04 | Phase 4 | — | Pending |
 | HIST-01 | Phase 6 | — | Pending |
 | HIST-02 | Phase 6 | — | Pending |

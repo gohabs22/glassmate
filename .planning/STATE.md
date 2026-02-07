@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-06)
 
 **Core value:** When a drinker scans a beer at a host's place, they instantly see the best available glass to use — the matching engine that connects beer style to host glassware is the ONE thing that must work.
-**Current focus:** Phase 2 complete — ready for Phase 3
+**Current focus:** Phase 3 complete — ready for Phase 4
 
 ## Current Position
 
-Phase: 3 of 6 (Glass Collection Management)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-02-07 — Completed 03-02-PLAN.md
+Phase: 3 of 6 (Glass Collection Management) ✓ COMPLETE
+Plan: 3 of 3 in current phase
+Status: Phase verified and complete
+Last activity: 2026-02-07 — Phase 3 verified (5/5 must-haves passed)
 
 Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
+- Total plans completed: 8
 - Average duration: 4 min
-- Total execution time: 0.6 hours
+- Total execution time: 0.7 hours
 
 **By Phase:**
 
@@ -29,10 +29,10 @@ Progress: [█████░░░░░] 50%
 |-------|-------|-------|----------|
 | 01-project-setup | 2 | 16 min | 8 min |
 | 02-role-selection-authentication | 3 | 14 min | 5 min |
-| 03-glass-collection-management | 1-2 | 4 min | 2 min |
+| 03-glass-collection-management | 3 | 9 min | 3 min |
 
 **Recent Trend:**
-- Last 5 plans: 3min, 3min, 8min, 2min, 2min
+- Last 5 plans: 8min, 2min, 2min, 5min
 - Trend: Fast execution for component/UI tasks
 
 *Updated after each plan completion*
@@ -61,10 +61,11 @@ Recent decisions affecting current work:
 - useEffect for redirect on dashboard prevents setState-during-render warning
 - Firestore operations client-side to match auth pattern
 - users/{userId}/glasses subcollection for glass ownership
-- Presence-based glass collection (no duplicate prevention)
+- Presence-based glass collection (no duplicate prevention, one entry per type)
 - GlassCard component handles both catalog and collection modes
 - Amber-600 accent color for beer culture aesthetic
 - Responsive 1-2-3 column grid layout for catalog/collection
+- Public guide at /guide outside (dashboard) group for unauthenticated access
 
 ### Pending Todos
 
@@ -77,5 +78,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-07
-Stopped at: Completed 03-02-PLAN.md
+Stopped at: Phase 3 complete, verified, ready for Phase 4
 Resume file: None
