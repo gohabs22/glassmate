@@ -12,7 +12,7 @@ This roadmap delivers a web app (Next.js + Firebase) that helps beer drinkers fi
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Project Setup** - Next.js project scaffolding and Firebase backend configuration
+- [x] **Phase 1: Project Setup** - Next.js project scaffolding and Firebase backend configuration
 - [ ] **Phase 2: Role Selection & Authentication** - User role choice and host account system
 - [ ] **Phase 3: Glass Collection Management** - Host glass library CRUD and reference guide
 - [ ] **Phase 4: QR Check-in Flow** - QR code generation and drinker check-in via URL
@@ -32,8 +32,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Scaffold Next.js project with TypeScript, Tailwind, ESLint and install Firebase SDK
-- [ ] 01-02-PLAN.md — Create Firebase initialization modules and verify connection from home page
+- [x] 01-01-PLAN.md — Scaffold Next.js project with TypeScript, Tailwind, ESLint and install Firebase SDK
+- [x] 01-02-PLAN.md — Create Firebase initialization modules and verify connection from home page
 
 ### Phase 2: Role Selection & Authentication
 **Goal**: Users can create accounts and navigate a dashboard that supports both hosting and drinking roles
@@ -116,7 +116,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Project Setup | 0/2 | Planned | - |
+| 1. Project Setup | 2/2 | ✓ Complete | 2026-02-06 |
 | 2. Role Selection & Authentication | 0/? | Not started | - |
 | 3. Glass Collection Management | 0/? | Not started | - |
 | 4. QR Check-in Flow | 0/? | Not started | - |
