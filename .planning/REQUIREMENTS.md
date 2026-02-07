@@ -3,8 +3,8 @@
 ## v1 Requirements
 
 ### Authentication
-- [ ] **AUTH-01**: Host can create an account with email and password
-- [ ] **AUTH-02**: Host can log in and stay logged in across browser sessions
+- [x] **AUTH-01**: Host can create an account with email and password
+- [x] **AUTH-02**: Host can log in and stay logged in across browser sessions
 
 ### Glass Management
 - [ ] **GLASS-01**: Host can browse a visual list of standard glass types (pint, tulip, snifter, weizen, goblet, etc.)
@@ -25,8 +25,8 @@
 - [ ] **MATCH-02**: App ranks host's available glasses from best to worst fit for the selected beer
 
 ### Onboarding & UX
-- [ ] **UX-01**: Logged-in users see a dashboard with "Manage My Glasses" and "Check In Somewhere"; anonymous visitors go straight to drinker/scan flow
-- [ ] **UX-02**: Host sees a guided setup wizard (create account → add first glasses)
+- [x] **UX-01**: Logged-in users see a dashboard with "Manage My Glasses" and "Check In Somewhere"; anonymous visitors go straight to drinker/scan flow
+- [x] **UX-02**: Host sees a guided setup wizard (create account → add first glasses)
 - [ ] **UX-03**: App includes a visual glass type reference guide with names and descriptions
 - [ ] **UX-04**: Logged-in user can check in at another host's place as a drinker (dual-role support)
 
@@ -67,8 +67,8 @@
 
 | REQ-ID | Phase | Plan | Status |
 |--------|-------|------|--------|
-| AUTH-01 | Phase 2 | — | Pending |
-| AUTH-02 | Phase 2 | — | Pending |
+| AUTH-01 | Phase 2 | 02-01, 02-03 | Complete |
+| AUTH-02 | Phase 2 | 02-01, 02-03 | Complete |
 | GLASS-01 | Phase 3 | — | Pending |
 | GLASS-02 | Phase 3 | — | Pending |
 | GLASS-03 | Phase 3 | — | Pending |
@@ -79,8 +79,8 @@
 | BEER-03 | Phase 5 | — | Pending |
 | MATCH-01 | Phase 6 | — | Pending |
 | MATCH-02 | Phase 6 | — | Pending |
-| UX-01 | Phase 2 | — | Pending |
-| UX-02 | Phase 2 | — | Pending |
+| UX-01 | Phase 2 | 02-02, 02-03 | Complete |
+| UX-02 | Phase 2 | 02-03 | Complete |
 | UX-03 | Phase 3 | — | Pending |
 | UX-04 | Phase 4 | — | Pending |
 | HIST-01 | Phase 6 | — | Pending |

@@ -13,7 +13,7 @@ This roadmap delivers a web app (Next.js + Firebase) that helps beer drinkers fi
 Decimal phases appear between their surrounding integers in numeric order.
 
 - [x] **Phase 1: Project Setup** - Next.js project scaffolding and Firebase backend configuration
-- [ ] **Phase 2: Role Selection & Authentication** - User role choice and host account system
+- [x] **Phase 2: Role Selection & Authentication** - User role choice and host account system
 - [ ] **Phase 3: Glass Collection Management** - Host glass library CRUD and reference guide
 - [ ] **Phase 4: QR Check-in Flow** - QR code generation and drinker check-in via URL
 - [ ] **Phase 5: Beer Lookup** - Beer search by name or style with info display
@@ -48,9 +48,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Auth infrastructure: Zod validation, Firebase auth actions, AuthProvider context
-- [ ] 02-02-PLAN.md — Page structure and routing: route groups, middleware, placeholder pages
-- [ ] 02-03-PLAN.md — Auth forms, dashboard wiring, setup wizard, and conditional home redirect
+- [x] 02-01-PLAN.md — Auth infrastructure: Zod validation, Firebase auth actions, AuthProvider context
+- [x] 02-02-PLAN.md — Page structure and routing: route groups, middleware, placeholder pages
+- [x] 02-03-PLAN.md — Auth forms, dashboard wiring, setup wizard, and conditional home redirect
 
 ### Phase 3: Glass Collection Management
 **Goal**: Hosts can build and manage their personal glass collection
@@ -119,7 +119,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Project Setup | 2/2 | ✓ Complete | 2026-02-06 |
-| 2. Role Selection & Authentication | 0/3 | Not started | - |
+| 2. Role Selection & Authentication | 3/3 | ✓ Complete | 2026-02-07 |
 | 3. Glass Collection Management | 0/? | Not started | - |
 | 4. QR Check-in Flow | 0/? | Not started | - |
 | 5. Beer Lookup | 0/? | Not started | - |

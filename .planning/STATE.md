@@ -5,34 +5,34 @@
 See: .planning/PROJECT.md (updated 2026-02-06)
 
 **Core value:** When a drinker scans a beer at a host's place, they instantly see the best available glass to use — the matching engine that connects beer style to host glassware is the ONE thing that must work.
-**Current focus:** Phase 1 complete — ready for Phase 2
+**Current focus:** Phase 2 complete — ready for Phase 3
 
 ## Current Position
 
-Phase: 2 of 6 (Role Selection & Authentication) - IN PROGRESS
-Plan: 2 of 3 in current phase ✓ COMPLETE
-Status: In progress
-Last activity: 2026-02-07 — Completed 02-02-PLAN.md (Page Structure and Routing)
+Phase: 2 of 6 (Role Selection & Authentication) ✓ COMPLETE
+Plan: 3 of 3 in current phase
+Status: Phase verified and complete
+Last activity: 2026-02-07 — Phase 2 verified (human + automated)
 
-Progress: [███░░░░░░░] 30%
+Progress: [███░░░░░░░] 33%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 4
+- Total plans completed: 5
 - Average duration: 5 min
-- Total execution time: 0.3 hours
+- Total execution time: 0.5 hours
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-project-setup | 2 | 16 min | 8 min |
-| 02-role-selection-authentication | 2 | 6 min | 3 min |
+| 02-role-selection-authentication | 3 | 14 min | 5 min |
 
 **Recent Trend:**
-- Last 5 plans: 13min, 3min, 3min, 3min
-- Trend: Strong velocity improvement (3min average for last 3 plans)
+- Last 5 plans: 3min, 3min, 3min, 8min
+- Trend: Consistent 3-5min per plan
 
 *Updated after each plan completion*
 
@@ -55,6 +55,9 @@ Recent decisions affecting current work:
 - .env.example committed (template), .env.local gitignored (secrets)
 - Route groups organize features without affecting URL structure
 - Middleware uses __session cookie for lightweight auth check (optimistic, no Firebase calls)
+- Auth calls happen client-side (not server actions) so onAuthStateChanged fires naturally
+- SetupWizard dismiss state stored in localStorage
+- useEffect for redirect on dashboard prevents setState-during-render warning
 
 ### Pending Todos
 
@@ -66,6 +69,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-07T09:59:11Z
-Stopped at: Completed 02-02-PLAN.md (Page Structure and Routing)
+Last session: 2026-02-07
+Stopped at: Phase 2 complete, verified, ready for Phase 3
 Resume file: None
