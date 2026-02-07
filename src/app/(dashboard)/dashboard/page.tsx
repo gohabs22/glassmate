@@ -1,12 +1,44 @@
+'use client';
+
 import Link from 'next/link';
+import { useAuth } from '@/components/auth/AuthProvider';
+import { SetupWizard } from '@/components/dashboard/SetupWizard';
+import { signOut } from 'firebase/auth';
+import { auth } from '@/lib/firebase/auth';
+import { useRouter } from 'next/navigation';
 
 export default function DashboardPage() {
+  const { user, loading } = useAuth();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    // Clear session cookie
+    document.cookie = '__session=; path=/; max-age=0';
+    router.push('/login');
+  };
+
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="text-lg text-gray-600">Loading...</div>
+      </div>
+    );
+  }
+
+  if (!user) {
+    router.push('/login');
+    return null;
+  }
+
   return (
     <div className="py-8">
       <div className="mb-8">
         <h1 className="mb-2 text-3xl font-bold text-gray-900">Dashboard</h1>
-        <p className="text-lg text-gray-600">Welcome!</p>
+        <p className="text-lg text-gray-600">Welcome, {user.email}!</p>
       </div>
+
+      <SetupWizard onDismiss={() => {}} />
 
       <div className="grid gap-4 md:grid-cols-2">
         <Link
@@ -35,10 +67,12 @@ export default function DashboardPage() {
       </div>
 
       <div className="mt-8">
-        {/* Logout button - wired in Plan 03 */}
-        <div className="inline-block rounded bg-gray-200 px-4 py-2 text-sm text-gray-500">
-          Logout (wired in Plan 03)
-        </div>
+        <button
+          onClick={handleLogout}
+          className="text-gray-500 hover:text-gray-700"
+        >
+          Log Out
+        </button>
       </div>
     </div>
   );
