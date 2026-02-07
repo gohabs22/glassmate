@@ -45,10 +45,12 @@ Plans:
   3. Host can create an account with email and password
   4. Host can log in and stay logged in across browser sessions
   5. Host sees guided setup wizard after account creation (ready for glass setup)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 02-01: [To be planned]
+- [ ] 02-01-PLAN.md — Auth infrastructure: Zod validation, Firebase auth actions, AuthProvider context
+- [ ] 02-02-PLAN.md — Page structure and routing: route groups, middleware, placeholder pages
+- [ ] 02-03-PLAN.md — Auth forms, dashboard wiring, setup wizard, and conditional home redirect
 
 ### Phase 3: Glass Collection Management
 **Goal**: Hosts can build and manage their personal glass collection
@@ -117,7 +119,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Project Setup | 2/2 | ✓ Complete | 2026-02-06 |
-| 2. Role Selection & Authentication | 0/? | Not started | - |
+| 2. Role Selection & Authentication | 0/3 | Not started | - |
 | 3. Glass Collection Management | 0/? | Not started | - |
 | 4. QR Check-in Flow | 0/? | Not started | - |
 | 5. Beer Lookup | 0/? | Not started | - |
