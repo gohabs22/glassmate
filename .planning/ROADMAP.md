@@ -65,7 +65,7 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Glass catalog data (8 types), SVG illustrations, Firestore security rules
+- [x] 03-01-PLAN.md — Glass catalog data (8 types), SVG illustrations, Firestore security rules
 - [ ] 03-02-PLAN.md — Firestore DB operations and glass UI components
 - [ ] 03-03-PLAN.md — Route pages, public guide, dashboard navigation wiring
 
@@ -122,7 +122,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 |-------|----------------|--------|-----------|
 | 1. Project Setup | 2/2 | ✓ Complete | 2026-02-06 |
 | 2. Role Selection & Authentication | 3/3 | ✓ Complete | 2026-02-07 |
-| 3. Glass Collection Management | 0/3 | Planned | - |
+| 3. Glass Collection Management | 1/3 | In progress | - |
 | 4. QR Check-in Flow | 0/? | Not started | - |
 | 5. Beer Lookup | 0/? | Not started | - |
 | 6. Matching & Recommendations | 0/? | Not started | - |
