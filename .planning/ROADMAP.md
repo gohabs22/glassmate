@@ -94,10 +94,12 @@ Plans:
   1. Drinker can search for a beer by name with results displayed
   2. Drinker can browse and select a beer style manually from a list
   3. After selecting a beer, page displays beer info (name, style, ABV)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 05-01: [To be planned]
+- [ ] 05-01-PLAN.md — Install dependencies, beer type definitions, style catalog data, and PunkAPI client
+- [ ] 05-02-PLAN.md — BeerSearch autocomplete, StyleBrowser component, and check-in page integration
+- [ ] 05-03-PLAN.md — BeerInfoSheet bottom sheet, ManualEntryForm fallback, and complete flow wiring
 
 ### Phase 6: Matching & Recommendations
 **Goal**: App matches selected beers to host glasses, displays ranked recommendations, and records beer history for logged-in users
@@ -126,5 +128,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Role Selection & Authentication | 3/3 | ✓ Complete | 2026-02-07 |
 | 3. Glass Collection Management | 3/3 | ✓ Complete | 2026-02-07 |
 | 4. QR Check-in Flow | 3/3 | ✓ Complete | 2026-02-08 |
-| 5. Beer Lookup | 0/? | Not started | - |
+| 5. Beer Lookup | 0/3 | Not started | - |
 | 6. Matching & Recommendations | 0/? | Not started | - |
