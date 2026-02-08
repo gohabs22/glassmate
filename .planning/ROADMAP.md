@@ -79,10 +79,12 @@ Plans:
   3. Drinker can scan a host's QR code which opens the collection page in their browser
   4. After scanning, drinker's browser loads the host's glass collection (ready for beer matching)
   5. Logged-in user can check in at another host's place as a drinker (dual-role)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 04-01: [To be planned]
+- [ ] 04-01-PLAN.md — Install QR libraries, QRCodeDisplay component, and /qr page for hosts
+- [ ] 04-02-PLAN.md — Public check-in route (/c/[userId]), middleware update, Firestore public read rules
+- [ ] 04-03-PLAN.md — Dashboard QR card wiring and dual-role check-in confirmation
 
 ### Phase 5: Beer Lookup
 **Goal**: Drinkers can search for beers and view beer information
@@ -123,6 +125,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 1. Project Setup | 2/2 | ✓ Complete | 2026-02-06 |
 | 2. Role Selection & Authentication | 3/3 | ✓ Complete | 2026-02-07 |
 | 3. Glass Collection Management | 3/3 | ✓ Complete | 2026-02-07 |
-| 4. QR Check-in Flow | 0/? | Not started | - |
+| 4. QR Check-in Flow | 0/3 | Not started | - |
 | 5. Beer Lookup | 0/? | Not started | - |
 | 6. Matching & Recommendations | 0/? | Not started | - |
