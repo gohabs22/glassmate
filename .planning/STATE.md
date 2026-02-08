@@ -10,11 +10,11 @@ See: .planning/PROJECT.md (updated 2026-02-06)
 ## Current Position
 
 Phase: 4 of 6 (QR Check-In Flow)
-Plan: 2 of 3 in current phase
+Plan: 1 of 3 in current phase
 Status: In progress
-Last activity: 2026-02-08 — Completed 04-02-PLAN.md (public check-in route)
+Last activity: 2026-02-08 — Completed 04-01-PLAN.md (QR code generation)
 
-Progress: [████████░░] 82%
+Progress: [█████░░░░░] 50%
 
 ## Performance Metrics
 
@@ -30,11 +30,11 @@ Progress: [████████░░] 82%
 | 01-project-setup | 2 | 16 min | 8 min |
 | 02-role-selection-authentication | 3 | 14 min | 5 min |
 | 03-glass-collection-management | 3 | 9 min | 3 min |
-| 04-qr-check-in-flow | 2 | 10 min | 5 min |
+| 04-qr-check-in-flow | 1 | 7 min | 7 min |
 
 **Recent Trend:**
-- Last 5 plans: 2min, 2min, 5min, 5min, 5min
-- Trend: Consistent 5min execution for infrastructure tasks
+- Last 5 plans: 2min, 5min, 7min
+- Trend: Fast execution for UI component tasks
 
 *Updated after each plan completion*
 
@@ -67,9 +67,10 @@ Recent decisions affecting current work:
 - Amber-600 accent color for beer culture aesthetic
 - Responsive 1-2-3 column grid layout for catalog/collection
 - Public guide at /guide outside (dashboard) group for unauthenticated access
-- Public Firestore rules allow read on users and glasses subcollection for check-in flow
-- GlassCard readOnly mode for drinker-facing views
-- Check-in route at /c/[userId] bypasses authentication
+- QR code URL structure: /c/{userId} for check-in links (short, memorable)
+- QR code generation: 256px, error correction level M, react-qr-code library
+- Web Share API with graceful fallback to download-only on unsupported devices
+- URL.revokeObjectURL cleanup pattern to prevent memory leaks in blob downloads
 
 ### Pending Todos
 
@@ -82,5 +83,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-08
-Stopped at: Completed 04-02-PLAN.md (public check-in route)
+Stopped at: Completed 04-01-PLAN.md (QR code generation)
 Resume file: None
