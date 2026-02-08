@@ -9,19 +9,19 @@ See: .planning/PROJECT.md (updated 2026-02-06)
 
 ## Current Position
 
-Phase: 3 of 6 (Glass Collection Management) ✓ COMPLETE
-Plan: 3 of 3 in current phase
-Status: Phase verified and complete
-Last activity: 2026-02-07 — Phase 3 verified (5/5 must-haves passed)
+Phase: 4 of 6 (QR Check-In Flow)
+Plan: 2 of 3 in current phase
+Status: In progress
+Last activity: 2026-02-08 — Completed 04-02-PLAN.md (public check-in route)
 
-Progress: [█████░░░░░] 50%
+Progress: [████████░░] 82%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: 4 min
-- Total execution time: 0.7 hours
+- Total execution time: 0.8 hours
 
 **By Phase:**
 
@@ -30,10 +30,11 @@ Progress: [█████░░░░░] 50%
 | 01-project-setup | 2 | 16 min | 8 min |
 | 02-role-selection-authentication | 3 | 14 min | 5 min |
 | 03-glass-collection-management | 3 | 9 min | 3 min |
+| 04-qr-check-in-flow | 2 | 10 min | 5 min |
 
 **Recent Trend:**
-- Last 5 plans: 8min, 2min, 2min, 5min
-- Trend: Fast execution for component/UI tasks
+- Last 5 plans: 2min, 2min, 5min, 5min, 5min
+- Trend: Consistent 5min execution for infrastructure tasks
 
 *Updated after each plan completion*
 
@@ -66,6 +67,9 @@ Recent decisions affecting current work:
 - Amber-600 accent color for beer culture aesthetic
 - Responsive 1-2-3 column grid layout for catalog/collection
 - Public guide at /guide outside (dashboard) group for unauthenticated access
+- Public Firestore rules allow read on users and glasses subcollection for check-in flow
+- GlassCard readOnly mode for drinker-facing views
+- Check-in route at /c/[userId] bypasses authentication
 
 ### Pending Todos
 
@@ -77,6 +81,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-07
-Stopped at: Phase 3 complete, verified, ready for Phase 4
+Last session: 2026-02-08
+Stopped at: Completed 04-02-PLAN.md (public check-in route)
 Resume file: None
