@@ -4,6 +4,8 @@ import { useState, FormEvent } from 'react';
 import { useRouter } from 'next/navigation';
 import { createUserWithEmailAndPassword, AuthError } from 'firebase/auth';
 import { auth } from '@/lib/firebase/auth';
+import { db } from '@/lib/firebase/firestore';
+import { doc, setDoc } from 'firebase/firestore';
 import { SignupFormSchema } from '@/lib/validations/auth';
 
 export function SignupForm() {
@@ -31,7 +33,14 @@ export function SignupForm() {
     const { email, password } = validatedFields.data;
 
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+      // Create user document in Firestore
+      await setDoc(doc(db, 'users', userCredential.user.uid), {
+        email: email,
+        createdAt: new Date(),
+      });
+
       // onAuthStateChanged fires automatically — set cookie and redirect
       document.cookie = '__session=1; path=/; max-age=2592000';
       router.push('/dashboard');
