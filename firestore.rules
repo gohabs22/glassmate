@@ -2,13 +2,12 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     match /users/{userId} {
-      allow read: if request.auth != null && request.auth.uid == userId;
+      allow read: if true;  // Public read for check-in display name
+      allow write: if request.auth != null && request.auth.uid == userId;
 
       match /glasses/{glassId} {
-        allow read: if request.auth != null && request.auth.uid == userId;
-        allow create: if request.auth != null && request.auth.uid == userId;
-        allow delete: if request.auth != null && request.auth.uid == userId;
-        allow update: if request.auth != null && request.auth.uid == userId;
+        allow read: if true;  // Public read for check-in flow
+        allow create, update, delete: if request.auth != null && request.auth.uid == userId;
       }
     }
   }

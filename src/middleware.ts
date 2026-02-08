@@ -3,8 +3,16 @@ import { NextRequest, NextResponse } from 'next/server';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Check if the current path is a public route
+  const isPublicRoute = pathname.startsWith('/c/') || pathname.startsWith('/guide');
+
+  // Allow public routes through immediately (no auth required)
+  if (isPublicRoute) {
+    return NextResponse.next();
+  }
+
   // Check if the current path is a protected route
-  const isProtectedRoute = pathname.startsWith('/dashboard');
+  const isProtectedRoute = pathname.startsWith('/dashboard') || pathname.startsWith('/qr') || pathname.startsWith('/glasses');
 
   // Check if the current path is an auth route
   const isAuthRoute = pathname.startsWith('/login') || pathname.startsWith('/signup');
