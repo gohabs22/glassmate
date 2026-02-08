@@ -10,18 +10,18 @@ See: .planning/PROJECT.md (updated 2026-02-06)
 ## Current Position
 
 Phase: 4 of 6 (QR Check-In Flow)
-Plan: 1 of 3 in current phase
-Status: In progress
-Last activity: 2026-02-08 — Completed 04-01-PLAN.md (QR code generation)
+Plan: 3 of 3 in current phase
+Status: Phase complete
+Last activity: 2026-02-08 — Completed 04-03-PLAN.md (Dashboard integration & dual-role UX)
 
-Progress: [█████░░░░░] 50%
+Progress: [██████░░░░] 61%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 9
+- Total plans completed: 11
 - Average duration: 4 min
-- Total execution time: 0.8 hours
+- Total execution time: 0.9 hours
 
 **By Phase:**
 
@@ -30,11 +30,11 @@ Progress: [█████░░░░░] 50%
 | 01-project-setup | 2 | 16 min | 8 min |
 | 02-role-selection-authentication | 3 | 14 min | 5 min |
 | 03-glass-collection-management | 3 | 9 min | 3 min |
-| 04-qr-check-in-flow | 1 | 7 min | 7 min |
+| 04-qr-check-in-flow | 3 | 17 min | 6 min |
 
 **Recent Trend:**
-- Last 5 plans: 2min, 5min, 7min
-- Trend: Fast execution for UI component tasks
+- Last 5 plans: 2min, 5min, 7min, 5min, 5min
+- Trend: Consistent fast execution for UI and integration tasks
 
 *Updated after each plan completion*
 
@@ -71,6 +71,10 @@ Recent decisions affecting current work:
 - QR code generation: 256px, error correction level M, react-qr-code library
 - Web Share API with graceful fallback to download-only on unsupported devices
 - URL.revokeObjectURL cleanup pattern to prevent memory leaks in blob downloads
+- Dashboard 3-column grid layout for action cards (Manage Glasses, QR Code, Check In)
+- Dual-role UX: Logged-in users at another host's collection see confirmation dialog
+- Host scanning own QR code sees full drinker experience (no confirmation gate)
+- Firebase auth in public routes: Direct onAuthStateChanged pattern (no AuthProvider dependency)
 
 ### Pending Todos
 
@@ -83,5 +87,5 @@ None yet.
 ## Session Continuity
 
 Last session: 2026-02-08
-Stopped at: Completed 04-01-PLAN.md (QR code generation)
+Stopped at: Completed 04-03-PLAN.md (Dashboard integration & dual-role UX) — Phase 4 complete
 Resume file: None
