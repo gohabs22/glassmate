@@ -8,9 +8,11 @@ type GlassCardProps = {
   isInCollection: boolean;
   collectionEntryId?: string;
   selectedSize?: string;
-  onAdd: (glassType: string, size: string) => Promise<void>;
+  onAdd?: (glassType: string, size: string) => Promise<void>;
   onRemove?: (glassId: string) => Promise<void>;
   onUpdateSize?: (glassId: string, newSize: string) => Promise<void>;
+  readOnly?: boolean;
+  displaySize?: string;
 };
 
 /**
@@ -25,6 +27,8 @@ export default function GlassCard({
   onAdd,
   onRemove,
   onUpdateSize,
+  readOnly,
+  displaySize,
 }: GlassCardProps) {
   const [selectedSize, setSelectedSize] = useState(
     initialSelectedSize || glass.availableSizes[0]
@@ -32,6 +36,7 @@ export default function GlassCard({
   const [isPending, setIsPending] = useState(false);
 
   const handleAdd = async () => {
+    if (!onAdd) return;
     setIsPending(true);
     try {
       await onAdd(glass.id, selectedSize);
@@ -80,78 +85,88 @@ export default function GlassCard({
         <p className="text-sm text-gray-600">{glass.description}</p>
       </div>
 
-      {/* Actions */}
-      <div className="space-y-2">
-        {!isInCollection ? (
-          <>
-            {/* Size selector for adding */}
-            <div>
-              <label
-                htmlFor={`size-${glass.id}`}
-                className="mb-1 block text-sm font-medium text-gray-700"
-              >
-                Size
-              </label>
-              <select
-                id={`size-${glass.id}`}
-                value={selectedSize}
-                onChange={(e) => setSelectedSize(e.target.value)}
-                disabled={isPending}
-                className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 disabled:cursor-not-allowed disabled:bg-gray-100"
-              >
-                {glass.availableSizes.map((size) => (
-                  <option key={size} value={size}>
-                    {size}
-                  </option>
-                ))}
-              </select>
-            </div>
+      {/* Actions or read-only display */}
+      {readOnly ? (
+        <div className="mt-2">
+          {displaySize && (
+            <span className="inline-block rounded-full bg-gray-100 px-3 py-1 text-sm text-gray-700">
+              {displaySize}
+            </span>
+          )}
+        </div>
+      ) : (
+        <div className="space-y-2">
+          {!isInCollection ? (
+            <>
+              {/* Size selector for adding */}
+              <div>
+                <label
+                  htmlFor={`size-${glass.id}`}
+                  className="mb-1 block text-sm font-medium text-gray-700"
+                >
+                  Size
+                </label>
+                <select
+                  id={`size-${glass.id}`}
+                  value={selectedSize}
+                  onChange={(e) => setSelectedSize(e.target.value)}
+                  disabled={isPending}
+                  className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 disabled:cursor-not-allowed disabled:bg-gray-100"
+                >
+                  {glass.availableSizes.map((size) => (
+                    <option key={size} value={size}>
+                      {size}
+                    </option>
+                  ))}
+                </select>
+              </div>
 
-            {/* Add button */}
-            <button
-              onClick={handleAdd}
-              disabled={isPending}
-              className="w-full rounded-md bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-amber-400"
-            >
-              {isPending ? 'Adding...' : 'Add to Collection'}
-            </button>
-          </>
-        ) : (
-          <>
-            {/* Size selector for editing */}
-            <div>
-              <label
-                htmlFor={`size-${glass.id}-edit`}
-                className="mb-1 block text-sm font-medium text-gray-700"
-              >
-                Change Size
-              </label>
-              <select
-                id={`size-${glass.id}-edit`}
-                value={selectedSize}
-                onChange={(e) => handleSizeChange(e.target.value)}
+              {/* Add button */}
+              <button
+                onClick={handleAdd}
                 disabled={isPending}
-                className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 disabled:cursor-not-allowed disabled:bg-gray-100"
+                className="w-full rounded-md bg-amber-600 px-4 py-2 text-sm font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-amber-400"
               >
-                {glass.availableSizes.map((size) => (
-                  <option key={size} value={size}>
-                    {size}
-                  </option>
-                ))}
-              </select>
-            </div>
+                {isPending ? 'Adding...' : 'Add to Collection'}
+              </button>
+            </>
+          ) : (
+            <>
+              {/* Size selector for editing */}
+              <div>
+                <label
+                  htmlFor={`size-${glass.id}-edit`}
+                  className="mb-1 block text-sm font-medium text-gray-700"
+                >
+                  Change Size
+                </label>
+                <select
+                  id={`size-${glass.id}-edit`}
+                  value={selectedSize}
+                  onChange={(e) => handleSizeChange(e.target.value)}
+                  disabled={isPending}
+                  className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm focus:border-amber-500 focus:outline-none focus:ring-1 focus:ring-amber-500 disabled:cursor-not-allowed disabled:bg-gray-100"
+                >
+                  {glass.availableSizes.map((size) => (
+                    <option key={size} value={size}>
+                      {size}
+                    </option>
+                  ))}
+                </select>
+              </div>
 
-            {/* Remove button */}
-            <button
-              onClick={handleRemove}
-              disabled={isPending}
-              className="w-full rounded-md border border-red-300 bg-white px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-100"
-            >
-              {isPending ? 'Removing...' : 'Remove from Collection'}
-            </button>
-          </>
-        )}
-      </div>
+              {/* Remove button */}
+              <button
+                onClick={handleRemove}
+                disabled={isPending}
+                className="w-full rounded-md border border-red-300 bg-white px-4 py-2 text-sm font-medium text-red-700 hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 disabled:cursor-not-allowed disabled:bg-gray-100"
+              >
+                {isPending ? 'Removing...' : 'Remove from Collection'}
+              </button>
+            </>
+          )}
+        </div>
+      )}
     </div>
   );
 }
