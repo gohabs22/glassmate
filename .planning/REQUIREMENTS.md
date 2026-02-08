@@ -12,8 +12,8 @@
 - [x] **GLASS-03**: Host can edit or remove glasses from their collection
 
 ### QR Check-in
-- [ ] **QR-01**: Host can generate a unique QR code linked to their glass collection
-- [ ] **QR-02**: Drinker can scan host's QR code to open host's collection page in browser
+- [x] **QR-01**: Host can generate a unique QR code linked to their glass collection
+- [x] **QR-02**: Drinker can scan host's QR code to open host's collection page in browser
 
 ### Beer Lookup
 - [ ] **BEER-01**: Drinker can search for a beer by name
@@ -28,7 +28,7 @@
 - [x] **UX-01**: Logged-in users see a dashboard with "Manage My Glasses" and "Check In Somewhere"; anonymous visitors go straight to drinker/scan flow
 - [x] **UX-02**: Host sees a guided setup wizard (create account → add first glasses)
 - [x] **UX-03**: App includes a visual glass type reference guide with names and descriptions
-- [ ] **UX-04**: Logged-in user can check in at another host's place as a drinker (dual-role support)
+- [x] **UX-04**: Logged-in user can check in at another host's place as a drinker (dual-role support)
 
 ### Beer History
 - [ ] **HIST-01**: App records which beers a logged-in drinker has selected at each visit
@@ -72,8 +72,8 @@
 | GLASS-01 | Phase 3 | 03-01, 03-02, 03-03 | Complete |
 | GLASS-02 | Phase 3 | 03-02, 03-03 | Complete |
 | GLASS-03 | Phase 3 | 03-02, 03-03 | Complete |
-| QR-01 | Phase 4 | — | Pending |
-| QR-02 | Phase 4 | — | Pending |
+| QR-01 | Phase 4 | 04-01 | Complete |
+| QR-02 | Phase 4 | 04-02 | Complete |
 | BEER-01 | Phase 5 | — | Pending |
 | BEER-02 | Phase 5 | — | Pending |
 | BEER-03 | Phase 5 | — | Pending |
@@ -82,7 +82,7 @@
 | UX-01 | Phase 2 | 02-02, 02-03 | Complete |
 | UX-02 | Phase 2 | 02-03 | Complete |
 | UX-03 | Phase 3 | 03-01, 03-03 | Complete |
-| UX-04 | Phase 4 | — | Pending |
+| UX-04 | Phase 4 | 04-03 | Complete |
 | HIST-01 | Phase 6 | — | Pending |
 | HIST-02 | Phase 6 | — | Pending |
 

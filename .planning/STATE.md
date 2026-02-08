@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-02-06)
 
 **Core value:** When a drinker scans a beer at a host's place, they instantly see the best available glass to use — the matching engine that connects beer style to host glassware is the ONE thing that must work.
-**Current focus:** Phase 3 complete — ready for Phase 4
+**Current focus:** Phase 4 complete — ready for Phase 5
 
 ## Current Position
 
-Phase: 4 of 6 (QR Check-In Flow)
+Phase: 4 of 6 (QR Check-in Flow) ✓ COMPLETE
 Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-02-08 — Completed 04-03-PLAN.md (Dashboard integration & dual-role UX)
+Status: Phase verified and complete
+Last activity: 2026-02-08 — Phase 4 verified (14/14 must-haves passed)
 
-Progress: [██████░░░░] 61%
+Progress: [███████░░░] 67%
 
 ## Performance Metrics
 
