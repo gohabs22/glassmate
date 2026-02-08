@@ -42,7 +42,7 @@ export default function DashboardPage() {
 
       <SetupWizard onDismiss={() => {}} />
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-4 md:grid-cols-3">
         <Link
           href="/glasses"
           className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
@@ -52,6 +52,18 @@ export default function DashboardPage() {
           </h2>
           <p className="text-sm text-gray-600">
             Add, edit, and organize your glassware collection
+          </p>
+        </Link>
+
+        <Link
+          href="/qr"
+          className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+        >
+          <h2 className="mb-2 text-xl font-semibold text-gray-900">
+            My QR Code
+          </h2>
+          <p className="text-sm text-gray-600">
+            Generate and share your QR code for guests
           </p>
         </Link>
 

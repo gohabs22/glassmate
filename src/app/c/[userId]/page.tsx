@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import { auth } from '@/lib/firebase/auth';
+import { onAuthStateChanged, User } from 'firebase/auth';
 import { getUserGlassesPublic, getUserProfile } from '@/lib/firebase/public-glasses-db';
 import { getGlassType, GlassType } from '@/lib/data/glass-catalog';
 import GlassCard from '@/components/glasses/GlassCard';
@@ -24,6 +26,19 @@ export default function CheckInPage() {
   const [hostName, setHostName] = useState('');
   const [glasses, setGlasses] = useState<ResolvedGlass[]>([]);
   const [userNotFound, setUserNotFound] = useState(false);
+  const [currentUser, setCurrentUser] = useState<User | null>(null);
+  const [authLoading, setAuthLoading] = useState(true);
+  const [checkedIn, setCheckedIn] = useState(false);
+
+  // Subscribe to auth state changes
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+      setAuthLoading(false);
+    });
+
+    return () => unsubscribe();
+  }, []);
 
   useEffect(() => {
     async function loadHostData() {
@@ -92,7 +107,7 @@ export default function CheckInPage() {
   }
 
   // Loading state
-  if (loading) {
+  if (loading || authLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50">
         <div className="text-center">
@@ -102,16 +117,66 @@ export default function CheckInPage() {
     );
   }
 
+  // Dual-role handling: logged-in user visiting ANOTHER host's collection
+  const isVisitingAnotherHost = currentUser && currentUser.uid !== userId;
+  const isViewingOwnCollection = currentUser && currentUser.uid === userId;
+
+  // Show check-in confirmation for logged-in users at another host's place
+  if (isVisitingAnotherHost && !checkedIn) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
+        <div className="max-w-md rounded-lg border border-gray-200 bg-white p-8 shadow-md">
+          <h1 className="mb-4 text-2xl font-bold text-gray-900">
+            Check in at {hostName}&apos;s place?
+          </h1>
+          <p className="mb-6 text-gray-600">
+            You&apos;ll see their glass collection and can find the perfect glass for your beer.
+          </p>
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={() => setCheckedIn(true)}
+              className="rounded-md bg-amber-600 px-6 py-3 text-base font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+            >
+              Check In
+            </button>
+            <Link
+              href="/dashboard"
+              className="text-center text-amber-600 hover:text-amber-700 hover:underline"
+            >
+              Back to Dashboard
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // Main content
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="mx-auto max-w-4xl px-4">
+        {/* Back to dashboard link for logged-in users */}
+        {currentUser && (
+          <div className="mb-4">
+            <Link
+              href="/dashboard"
+              className="text-amber-600 hover:text-amber-700 hover:underline"
+            >
+              ← Back to Dashboard
+            </Link>
+          </div>
+        )}
+
         {/* Host greeting */}
         <div className="mb-8 text-center">
           <h1 className="mb-2 text-3xl font-bold text-gray-900">
             {hostName}&apos;s Glass Collection
           </h1>
-          <p className="text-gray-600">Welcome! Here are the glasses available</p>
+          <p className="text-gray-600">
+            {isViewingOwnCollection
+              ? 'This is how guests will see your collection'
+              : 'Welcome! Here are the glasses available'}
+          </p>
         </div>
 
         {/* Empty collection state */}
