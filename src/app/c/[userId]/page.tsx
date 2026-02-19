@@ -8,6 +8,9 @@ import { onAuthStateChanged, User } from 'firebase/auth';
 import { getUserGlassesPublic, getUserProfile } from '@/lib/firebase/public-glasses-db';
 import { getGlassType, GlassType } from '@/lib/data/glass-catalog';
 import GlassCard from '@/components/glasses/GlassCard';
+import BeerSearch from '@/components/beer/BeerSearch';
+import StyleBrowser from '@/components/beer/StyleBrowser';
+import type { Beer } from '@/lib/beer/types';
 
 type ResolvedGlass = {
   glassType: GlassType;
@@ -29,6 +32,9 @@ export default function CheckInPage() {
   const [currentUser, setCurrentUser] = useState<User | null>(null);
   const [authLoading, setAuthLoading] = useState(true);
   const [checkedIn, setCheckedIn] = useState(false);
+  const [selectedBeer, setSelectedBeer] = useState<Beer | null>(null);
+  const [showBeerLookup, setShowBeerLookup] = useState(false);
+  const [activeTab, setActiveTab] = useState<'search' | 'browse'>('search');
 
   // Subscribe to auth state changes
   useEffect(() => {
@@ -207,18 +213,115 @@ export default function CheckInPage() {
           </div>
         )}
 
-        {/* Coming-soon beer teaser */}
-        <div className="rounded-lg bg-gray-100 p-8 text-center">
-          <h2 className="mb-2 text-xl font-semibold text-gray-900">
-            Pick a Beer to Find Your Glass!
-          </h2>
-          <p className="mb-4 text-gray-600">Beer matching is coming soon!</p>
-          <button
-            disabled
-            className="cursor-not-allowed rounded-md bg-gray-300 px-6 py-3 text-base font-medium text-gray-500"
-          >
-            Choose a Beer
-          </button>
+        {/* Beer lookup section */}
+        <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
+          {!showBeerLookup && !selectedBeer && (
+            <div className="text-center">
+              <h2 className="mb-2 text-xl font-semibold text-gray-900">
+                Pick a Beer to Find Your Glass!
+              </h2>
+              <p className="mb-4 text-gray-600">
+                Search for what you&apos;re drinking and we&apos;ll match it to a glass.
+              </p>
+              <button
+                onClick={() => setShowBeerLookup(true)}
+                className="rounded-md bg-amber-600 px-6 py-3 text-base font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
+              >
+                Choose a Beer
+              </button>
+            </div>
+          )}
+
+          {showBeerLookup && !selectedBeer && (
+            <div>
+              <h2 className="mb-4 text-xl font-semibold text-gray-900">
+                Find Your Beer
+              </h2>
+
+              {/* Tab switcher */}
+              <div className="mb-4 flex gap-1 rounded-lg bg-gray-100 p-1">
+                <button
+                  onClick={() => setActiveTab('search')}
+                  className={`flex-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                    activeTab === 'search'
+                      ? 'bg-amber-600 text-white shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  Search
+                </button>
+                <button
+                  onClick={() => setActiveTab('browse')}
+                  className={`flex-1 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+                    activeTab === 'browse'
+                      ? 'bg-amber-600 text-white shadow-sm'
+                      : 'text-gray-600 hover:text-gray-900'
+                  }`}
+                >
+                  Browse by Style
+                </button>
+              </div>
+
+              {/* Tab content */}
+              {activeTab === 'search' ? (
+                <BeerSearch
+                  onSelect={(beer) => {
+                    setSelectedBeer(beer);
+                    setShowBeerLookup(false);
+                  }}
+                />
+              ) : (
+                <StyleBrowser
+                  onSelectBeer={(beer) => {
+                    setSelectedBeer(beer);
+                    setShowBeerLookup(false);
+                  }}
+                />
+              )}
+
+              <button
+                onClick={() => setShowBeerLookup(false)}
+                className="mt-4 block w-full text-center text-sm text-gray-500 hover:text-gray-700"
+              >
+                Cancel
+              </button>
+            </div>
+          )}
+
+          {selectedBeer && (
+            <div>
+              <h2 className="mb-4 text-xl font-semibold text-gray-900">
+                Your Beer
+              </h2>
+              <div className="rounded-lg bg-amber-50 p-4">
+                <div className="text-lg font-semibold text-gray-900">
+                  {selectedBeer.name}
+                </div>
+                <div className="mt-1 text-sm text-gray-600">
+                  {selectedBeer.brewery && <>{selectedBeer.brewery} &middot; </>}
+                  {selectedBeer.style}
+                  {selectedBeer.abv != null && <> &middot; {selectedBeer.abv}% ABV</>}
+                </div>
+              </div>
+              <div className="mt-4 flex flex-col gap-2">
+                <button
+                  disabled
+                  className="cursor-not-allowed rounded-md bg-gray-300 px-6 py-3 text-base font-medium text-gray-500"
+                >
+                  Match to Glasses — Coming Soon
+                </button>
+                <button
+                  onClick={() => {
+                    setSelectedBeer(null);
+                    setShowBeerLookup(true);
+                  }}
+                  className="text-sm text-amber-600 hover:text-amber-700 hover:underline"
+                >
+                  Change beer
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
