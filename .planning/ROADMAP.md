@@ -16,7 +16,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 2: Role Selection & Authentication** - User role choice and host account system
 - [x] **Phase 3: Glass Collection Management** - Host glass library CRUD and reference guide
 - [x] **Phase 4: QR Check-in Flow** - QR code generation and drinker check-in via URL
-- [ ] **Phase 5: Beer Lookup** - Beer search by name or style with info display
+- [x] **Phase 5: Beer Lookup** - Beer search by name or style with info display
 - [ ] **Phase 6: Matching & Recommendations** - Style-to-glass mapping and ranked recommendations
 
 ## Phase Details
@@ -97,9 +97,9 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 05-01-PLAN.md — Install dependencies, beer type definitions, style catalog data, and PunkAPI client
-- [ ] 05-02-PLAN.md — BeerSearch autocomplete, StyleBrowser component, and check-in page integration
-- [ ] 05-03-PLAN.md — BeerInfoSheet bottom sheet, ManualEntryForm fallback, and complete flow wiring
+- [x] 05-01-PLAN.md — Install dependencies, beer type definitions, style catalog data, and beer catalog with search
+- [x] 05-02-PLAN.md — BeerSearch autocomplete, StyleBrowser component, and check-in page integration
+- [x] 05-03-PLAN.md — BeerInfoSheet bottom sheet, ManualEntryForm fallback, and complete flow wiring
 
 ### Phase 6: Matching & Recommendations
 **Goal**: App matches selected beers to host glasses, displays ranked recommendations, and records beer history for logged-in users
@@ -128,5 +128,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 2. Role Selection & Authentication | 3/3 | ✓ Complete | 2026-02-07 |
 | 3. Glass Collection Management | 3/3 | ✓ Complete | 2026-02-07 |
 | 4. QR Check-in Flow | 3/3 | ✓ Complete | 2026-02-08 |
-| 5. Beer Lookup | 0/3 | Not started | - |
+| 5. Beer Lookup | 3/3 | ✓ Complete | 2026-02-18 |
 | 6. Matching & Recommendations | 0/? | Not started | - |

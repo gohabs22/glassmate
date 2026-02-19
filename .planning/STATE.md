@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-06)
 
 **Core value:** When a drinker scans a beer at a host's place, they instantly see the best available glass to use — the matching engine that connects beer style to host glassware is the ONE thing that must work.
-**Current focus:** Phase 4 complete — ready for Phase 5
+**Current focus:** Phase 5 complete — ready for Phase 6
 
 ## Current Position
 
-Phase: 4 of 6 (QR Check-in Flow) ✓ COMPLETE
+Phase: 5 of 6 (Beer Lookup) ✓ COMPLETE
 Plan: 3 of 3 in current phase
-Status: Phase verified and complete
-Last activity: 2026-02-08 — Phase 4 verified (14/14 must-haves passed)
+Status: Phase complete
+Last activity: 2026-02-18 — Phase 5 executed (3/3 plans)
 
-Progress: [███████░░░] 67%
+Progress: [████████░░] 83%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 11
+- Total plans completed: 14
 - Average duration: 4 min
-- Total execution time: 0.9 hours
+- Total execution time: 1.1 hours
 
 **By Phase:**
 
@@ -31,10 +31,11 @@ Progress: [███████░░░] 67%
 | 02-role-selection-authentication | 3 | 14 min | 5 min |
 | 03-glass-collection-management | 3 | 9 min | 3 min |
 | 04-qr-check-in-flow | 3 | 17 min | 6 min |
+| 05-beer-lookup | 3 | 13 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 2min, 5min, 7min, 5min, 5min
-- Trend: Consistent fast execution for UI and integration tasks
+- Last 5 plans: 5min, 5min, 4min, 4min, 5min
+- Trend: Consistent fast execution
 
 *Updated after each plan completion*
 
@@ -75,6 +76,9 @@ Recent decisions affecting current work:
 - Dual-role UX: Logged-in users at another host's collection see confirmation dialog
 - Host scanning own QR code sees full drinker experience (no confirmation gate)
 - Firebase auth in public routes: Direct onAuthStateChanged pattern (no AuthProvider dependency)
+- No free beer API exists — hardcoded catalog of 63 real beers across all major styles
+- react-modal-sheet uses named import { Sheet }, detent "content" (not "content-height")
+- Headless UI Combobox for search autocomplete, use-debounce for 300ms debounce
 
 ### Pending Todos
 
@@ -86,6 +90,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-08
-Stopped at: Completed 04-03-PLAN.md (Dashboard integration & dual-role UX) — Phase 4 complete
+Last session: 2026-02-18
+Stopped at: Completed Phase 5 (Beer Lookup) — all 3 plans executed
 Resume file: None
