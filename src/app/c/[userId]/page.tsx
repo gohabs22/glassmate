@@ -10,6 +10,8 @@ import { getGlassType, GlassType } from '@/lib/data/glass-catalog';
 import GlassCard from '@/components/glasses/GlassCard';
 import BeerSearch from '@/components/beer/BeerSearch';
 import StyleBrowser from '@/components/beer/StyleBrowser';
+import BeerInfoSheet from '@/components/beer/BeerInfoSheet';
+import ManualEntryForm from '@/components/beer/ManualEntryForm';
 import type { Beer } from '@/lib/beer/types';
 
 type ResolvedGlass = {
@@ -34,7 +36,22 @@ export default function CheckInPage() {
   const [checkedIn, setCheckedIn] = useState(false);
   const [selectedBeer, setSelectedBeer] = useState<Beer | null>(null);
   const [showBeerLookup, setShowBeerLookup] = useState(false);
+  const [showInfoSheet, setShowInfoSheet] = useState(false);
+  const [showManualEntry, setShowManualEntry] = useState(false);
   const [activeTab, setActiveTab] = useState<'search' | 'browse'>('search');
+
+  function handleBeerSelect(beer: Beer) {
+    setSelectedBeer(beer);
+    setShowBeerLookup(false);
+    setShowManualEntry(false);
+    setShowInfoSheet(true);
+  }
+
+  function handleChangeBeer() {
+    setSelectedBeer(null);
+    setShowInfoSheet(false);
+    setShowBeerLookup(true);
+  }
 
   // Subscribe to auth state changes
   useEffect(() => {
@@ -215,7 +232,7 @@ export default function CheckInPage() {
 
         {/* Beer lookup section */}
         <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
-          {!showBeerLookup && !selectedBeer && (
+          {!showBeerLookup && !showManualEntry && !selectedBeer && (
             <div className="text-center">
               <h2 className="mb-2 text-xl font-semibold text-gray-900">
                 Pick a Beer to Find Your Glass!
@@ -264,19 +281,20 @@ export default function CheckInPage() {
 
               {/* Tab content */}
               {activeTab === 'search' ? (
-                <BeerSearch
-                  onSelect={(beer) => {
-                    setSelectedBeer(beer);
-                    setShowBeerLookup(false);
-                  }}
-                />
+                <div>
+                  <BeerSearch onSelect={handleBeerSelect} />
+                  <button
+                    onClick={() => {
+                      setShowManualEntry(true);
+                      setShowBeerLookup(false);
+                    }}
+                    className="mt-3 block w-full text-center text-sm text-amber-600 hover:text-amber-700 hover:underline"
+                  >
+                    Can&apos;t find your beer? Enter it manually
+                  </button>
+                </div>
               ) : (
-                <StyleBrowser
-                  onSelectBeer={(beer) => {
-                    setSelectedBeer(beer);
-                    setShowBeerLookup(false);
-                  }}
-                />
+                <StyleBrowser onSelectBeer={handleBeerSelect} />
               )}
 
               <button
@@ -286,6 +304,16 @@ export default function CheckInPage() {
                 Cancel
               </button>
             </div>
+          )}
+
+          {showManualEntry && !selectedBeer && (
+            <ManualEntryForm
+              onSubmit={handleBeerSelect}
+              onCancel={() => {
+                setShowManualEntry(false);
+                setShowBeerLookup(true);
+              }}
+            />
           )}
 
           {selectedBeer && (
@@ -298,23 +326,22 @@ export default function CheckInPage() {
                   {selectedBeer.name}
                 </div>
                 <div className="mt-1 text-sm text-gray-600">
-                  {selectedBeer.brewery && <>{selectedBeer.brewery} &middot; </>}
+                  {selectedBeer.brewery && selectedBeer.brewery !== 'Unknown' && (
+                    <>{selectedBeer.brewery} &middot; </>
+                  )}
                   {selectedBeer.style}
                   {selectedBeer.abv != null && <> &middot; {selectedBeer.abv}% ABV</>}
                 </div>
               </div>
               <div className="mt-4 flex flex-col gap-2">
                 <button
-                  disabled
-                  className="cursor-not-allowed rounded-md bg-gray-300 px-6 py-3 text-base font-medium text-gray-500"
+                  onClick={() => setShowInfoSheet(true)}
+                  className="rounded-md bg-amber-600 px-6 py-3 text-base font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
                 >
-                  Match to Glasses — Coming Soon
+                  View Details & Match to Glasses
                 </button>
                 <button
-                  onClick={() => {
-                    setSelectedBeer(null);
-                    setShowBeerLookup(true);
-                  }}
+                  onClick={handleChangeBeer}
                   className="text-sm text-amber-600 hover:text-amber-700 hover:underline"
                 >
                   Change beer
@@ -324,6 +351,15 @@ export default function CheckInPage() {
           )}
         </div>
       </div>
+
+      {/* Beer info bottom sheet */}
+      <BeerInfoSheet
+        beer={selectedBeer}
+        isOpen={showInfoSheet}
+        onClose={() => setShowInfoSheet(false)}
+        onMatchToGlasses={() => alert('Glass matching coming in Phase 6!')}
+        onChangeBeer={handleChangeBeer}
+      />
     </div>
   );
 }
