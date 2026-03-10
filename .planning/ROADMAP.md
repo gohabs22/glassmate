@@ -112,10 +112,12 @@ Plans:
   4. Result page shows recommended glass with beer name, style, ABV, and pairing rationale
   5. App records beer selections for logged-in drinkers
   6. Logged-in user can view their beer drinking history
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 06-01: [To be planned]
+- [ ] 06-01-PLAN.md — Fix beer style mismatches, matching engine with pairing rationale data
+- [ ] 06-02-PLAN.md — ResultsSheet component and check-in page matching integration
+- [ ] 06-03-PLAN.md — Beer history Firestore operations, /history page, dashboard link, save wiring
 
 ## Progress
 
