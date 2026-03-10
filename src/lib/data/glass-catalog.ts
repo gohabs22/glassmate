@@ -19,7 +19,7 @@ export const GLASS_CATALOG: GlassType[] = [
     name: "Pint Glass",
     description: "The classic American pub glass with straight sides that taper slightly wider toward the top. Versatile for most ales and lagers.",
     availableSizes: ["16oz", "20oz"],
-    beerStyles: ["American IPA", "Pale Ale", "Lager", "Amber Ale", "Porter"],
+    beerStyles: ["American IPA", "Pale Ale", "Lager", "Amber Ale", "Porter", "IPA", "Stout"],
     svgPath: "/assets/glasses/pint.svg",
   },
   {
@@ -43,7 +43,7 @@ export const GLASS_CATALOG: GlassType[] = [
     name: "Weizen Glass",
     description: "A tall, curvaceous glass narrow at the bottom that expands in the middle and tapers slightly at the top. Designed to showcase the cloudiness and thick head of wheat beers.",
     availableSizes: ["16oz", "20oz", "22oz"],
-    beerStyles: ["Hefeweizen", "Witbier", "Wheat Ale", "Dunkelweizen", "Kristalweizen"],
+    beerStyles: ["Hefeweizen", "Witbier", "Wheat Ale", "Dunkelweizen", "Kristalweizen", "American Wheat"],
     svgPath: "/assets/glasses/weizen.svg",
   },
   {
@@ -59,7 +59,7 @@ export const GLASS_CATALOG: GlassType[] = [
     name: "Pilsner Glass",
     description: "A tall, slim glass that tapers from a wider top to a narrow bottom. Shows off the clarity and carbonation of lighter beers.",
     availableSizes: ["12oz", "14oz", "16oz"],
-    beerStyles: ["Pilsner", "Czech Lager", "Light Lager", "Kolsch", "Blonde Ale"],
+    beerStyles: ["Pilsner", "Czech Lager", "Light Lager", "Kolsch", "Blonde Ale", "Helles"],
     svgPath: "/assets/glasses/pilsner.svg",
   },
   {
@@ -75,7 +75,7 @@ export const GLASS_CATALOG: GlassType[] = [
     name: "Beer Mug",
     description: "A thick, sturdy cylindrical glass with a handle. Built for durability and large pours, perfect for casual drinking and outdoor events.",
     availableSizes: ["16oz", "20oz", "32oz"],
-    beerStyles: ["American Lager", "Oktoberfest", "Marzen", "Brown Ale", "Irish Red"],
+    beerStyles: ["American Lager", "Oktoberfest", "Marzen", "Brown Ale", "Irish Red", "Dunkel"],
     svgPath: "/assets/glasses/mug.svg",
   },
 ];
