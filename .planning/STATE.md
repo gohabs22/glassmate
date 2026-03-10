@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-06)
 
 **Core value:** When a drinker scans a beer at a host's place, they instantly see the best available glass to use — the matching engine that connects beer style to host glassware is the ONE thing that must work.
-**Current focus:** Phase 5 complete — ready for Phase 6
+**Current focus:** Phase 6 in progress — matching engine complete, results UI next
 
 ## Current Position
 
-Phase: 5 of 6 (Beer Lookup) ✓ COMPLETE
-Plan: 3 of 3 in current phase
-Status: Phase complete
-Last activity: 2026-02-18 — Phase 5 executed (3/3 plans)
+Phase: 6 of 6 (Matching & Recommendations)
+Plan: 1 of 3 in current phase
+Status: Plan 06-01 complete
+Last activity: 2026-03-09 — Phase 6 plan 1 executed (matching engine)
 
-Progress: [████████░░] 83%
+Progress: [█████████░] 88%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 14
-- Average duration: 4 min
-- Total execution time: 1.1 hours
+- Total plans completed: 15
+- Average duration: 5 min
+- Total execution time: 1.3 hours
 
 **By Phase:**
 
@@ -32,10 +32,11 @@ Progress: [████████░░] 83%
 | 03-glass-collection-management | 3 | 9 min | 3 min |
 | 04-qr-check-in-flow | 3 | 17 min | 6 min |
 | 05-beer-lookup | 3 | 13 min | 4 min |
+| 06-matching-recommendations | 1 | 12 min | 12 min |
 
 **Recent Trend:**
-- Last 5 plans: 5min, 5min, 4min, 4min, 5min
-- Trend: Consistent fast execution
+- Last 5 plans: 5min, 4min, 4min, 5min, 12min
+- Trend: Matching engine plan slightly longer due to 45 rationale entries
 
 *Updated after each plan completion*
 
@@ -79,6 +80,9 @@ Recent decisions affecting current work:
 - No free beer API exists — hardcoded catalog of 63 real beers across all major styles
 - react-modal-sheet uses named import { Sheet }, detent "content" (not "content-height")
 - Headless UI Combobox for search autocomplete, use-debounce for 300ms debounce
+- Direct string matching for beer-to-glass pairing (no fuzzy matching needed)
+- Pairing rationale keyed as "glassId:beerStyle" for O(1) lookup
+- Empty glass collection returns idealGlass from catalog (app always useful)
 
 ### Pending Todos
 
@@ -90,6 +94,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-02-20
-Stopped at: Phase 6 context gathered — ready for planning
-Resume file: .planning/phases/06-matching-recommendations/06-CONTEXT.md
+Last session: 2026-03-09
+Stopped at: Completed 06-01-PLAN.md (matching engine)
+Resume file: .planning/phases/06-matching-recommendations/06-01-SUMMARY.md
