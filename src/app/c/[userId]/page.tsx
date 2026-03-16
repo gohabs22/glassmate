@@ -11,7 +11,9 @@ import GlassCard from '@/components/glasses/GlassCard';
 import BeerSearch from '@/components/beer/BeerSearch';
 import StyleBrowser from '@/components/beer/StyleBrowser';
 import BeerInfoSheet from '@/components/beer/BeerInfoSheet';
+import ResultsSheet from '@/components/beer/ResultsSheet';
 import ManualEntryForm from '@/components/beer/ManualEntryForm';
+import { matchBeerToGlasses, type MatchResult } from '@/lib/beer/matching';
 import type { Beer } from '@/lib/beer/types';
 
 type ResolvedGlass = {
@@ -39,6 +41,9 @@ export default function CheckInPage() {
   const [showInfoSheet, setShowInfoSheet] = useState(false);
   const [showManualEntry, setShowManualEntry] = useState(false);
   const [activeTab, setActiveTab] = useState<'search' | 'browse'>('search');
+  const [matchResult, setMatchResult] = useState<MatchResult | null>(null);
+  const [showResultsSheet, setShowResultsSheet] = useState(false);
+  const [historySaved, setHistorySaved] = useState(false);
 
   function handleBeerSelect(beer: Beer) {
     setSelectedBeer(beer);
@@ -50,7 +55,16 @@ export default function CheckInPage() {
   function handleChangeBeer() {
     setSelectedBeer(null);
     setShowInfoSheet(false);
+    setShowResultsSheet(false);
     setShowBeerLookup(true);
+  }
+
+  function handleMatchToGlasses(beer: Beer) {
+    const result = matchBeerToGlasses(beer, glasses);
+    setMatchResult(result);
+    setShowInfoSheet(false);
+    setShowResultsSheet(true);
+    setHistorySaved(false);
   }
 
   // Subscribe to auth state changes
@@ -335,10 +349,20 @@ export default function CheckInPage() {
               </div>
               <div className="mt-4 flex flex-col gap-2">
                 <button
-                  onClick={() => setShowInfoSheet(true)}
+                  onClick={() => {
+                    if (selectedBeer) {
+                      handleMatchToGlasses(selectedBeer);
+                    }
+                  }}
                   className="rounded-md bg-amber-600 px-6 py-3 text-base font-medium text-white hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2"
                 >
-                  View Details & Match to Glasses
+                  Match to Glasses
+                </button>
+                <button
+                  onClick={() => setShowInfoSheet(true)}
+                  className="text-sm text-amber-600 hover:text-amber-700 hover:underline"
+                >
+                  View details
                 </button>
                 <button
                   onClick={handleChangeBeer}
@@ -357,8 +381,21 @@ export default function CheckInPage() {
         beer={selectedBeer}
         isOpen={showInfoSheet}
         onClose={() => setShowInfoSheet(false)}
-        onMatchToGlasses={() => alert('Glass matching coming in Phase 6!')}
+        onMatchToGlasses={handleMatchToGlasses}
         onChangeBeer={handleChangeBeer}
+      />
+
+      {/* Glass recommendation results sheet */}
+      <ResultsSheet
+        matchResult={matchResult}
+        isOpen={showResultsSheet}
+        onClose={() => setShowResultsSheet(false)}
+        onSaveToHistory={() => {
+          // Will be wired to Firestore in 06-03
+          setHistorySaved(true);
+        }}
+        isLoggedIn={!!currentUser}
+        saved={historySaved}
       />
     </div>
   );
