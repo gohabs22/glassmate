@@ -12,7 +12,7 @@ export function middleware(request: NextRequest) {
   }
 
   // Check if the current path is a protected route
-  const isProtectedRoute = pathname.startsWith('/dashboard') || pathname.startsWith('/qr') || pathname.startsWith('/glasses');
+  const isProtectedRoute = pathname.startsWith('/dashboard') || pathname.startsWith('/qr') || pathname.startsWith('/glasses') || pathname.startsWith('/history');
 
   // Check if the current path is an auth route
   const isAuthRoute = pathname.startsWith('/login') || pathname.startsWith('/signup');

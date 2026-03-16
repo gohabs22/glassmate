@@ -392,16 +392,19 @@ export default function CheckInPage() {
         isOpen={showResultsSheet}
         onClose={() => setShowResultsSheet(false)}
         onSaveToHistory={async () => {
-          if (!currentUser || !selectedBeer || !matchResult?.bestAvailable) return;
+          if (!currentUser || !selectedBeer || !matchResult) return;
+          const glass = matchResult.bestAvailable
+            ? { glassId: matchResult.bestAvailable.glass.id, glassName: matchResult.bestAvailable.glass.name }
+            : matchResult.idealGlass
+              ? { glassId: matchResult.idealGlass.id, glassName: matchResult.idealGlass.name }
+              : null;
+          if (!glass) return;
           await saveHistoryEntry(
             currentUser.uid,
             userId,
             hostName,
             selectedBeer,
-            {
-              glassId: matchResult.bestAvailable.glass.id,
-              glassName: matchResult.bestAvailable.glass.name,
-            }
+            glass
           );
           setHistorySaved(true);
         }}

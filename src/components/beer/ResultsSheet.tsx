@@ -145,8 +145,7 @@ export default function ResultsSheet({
             )}
 
             {/* Save to history section */}
-            {!idealGlass && (
-              <div className="mt-6 border-t border-gray-100 pt-4">
+            <div className="mt-6 border-t border-gray-100 pt-4">
                 {isLoggedIn && !saved && (
                   <button
                     onClick={onSaveToHistory}
@@ -173,7 +172,6 @@ export default function ResultsSheet({
                   </p>
                 )}
               </div>
-            )}
           </div>
         </Sheet.Content>
       </Sheet.Container>
