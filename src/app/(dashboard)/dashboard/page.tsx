@@ -42,7 +42,7 @@ export default function DashboardPage() {
 
       <SetupWizard onDismiss={() => {}} />
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
         <Link
           href="/glasses"
           className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
@@ -76,6 +76,18 @@ export default function DashboardPage() {
           </h2>
           <p className="text-sm text-gray-600">
             Scan a QR code to see a host's glass collection
+          </p>
+        </Link>
+
+        <Link
+          href="/history"
+          className="block rounded-lg border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+        >
+          <h2 className="mb-2 text-xl font-semibold text-gray-900">
+            Beer History
+          </h2>
+          <p className="text-sm text-gray-600">
+            View your past beer selections and glass pairings
           </p>
         </Link>
       </div>

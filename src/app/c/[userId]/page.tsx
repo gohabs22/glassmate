@@ -14,6 +14,7 @@ import BeerInfoSheet from '@/components/beer/BeerInfoSheet';
 import ResultsSheet from '@/components/beer/ResultsSheet';
 import ManualEntryForm from '@/components/beer/ManualEntryForm';
 import { matchBeerToGlasses, type MatchResult } from '@/lib/beer/matching';
+import { saveHistoryEntry } from '@/lib/firebase/history-db';
 import type { Beer } from '@/lib/beer/types';
 
 type ResolvedGlass = {
@@ -390,8 +391,18 @@ export default function CheckInPage() {
         matchResult={matchResult}
         isOpen={showResultsSheet}
         onClose={() => setShowResultsSheet(false)}
-        onSaveToHistory={() => {
-          // Will be wired to Firestore in 06-03
+        onSaveToHistory={async () => {
+          if (!currentUser || !selectedBeer || !matchResult?.bestAvailable) return;
+          await saveHistoryEntry(
+            currentUser.uid,
+            userId,
+            hostName,
+            selectedBeer,
+            {
+              glassId: matchResult.bestAvailable.glass.id,
+              glassName: matchResult.bestAvailable.glass.name,
+            }
+          );
           setHistorySaved(true);
         }}
         isLoggedIn={!!currentUser}
