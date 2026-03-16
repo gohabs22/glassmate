@@ -18,7 +18,7 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 4: QR Check-in Flow** - QR code generation and drinker check-in via URL
 - [x] **Phase 5: Beer Lookup** - Beer search by name or style with info display
 - [x] **Phase 6: Matching & Recommendations** - Style-to-glass mapping and ranked recommendations
-- [ ] **Phase 7: Audit Gap Fixes** - Fix broken links, edge cases, middleware, and dead code cleanup
+- [x] **Phase 7: Audit Gap Fixes** - Fix broken links, edge cases, middleware, and dead code cleanup
 
 ## Phase Details
 
@@ -133,7 +133,7 @@ Plans:
 **Plans**: 1 plan
 
 Plans:
-- [ ] 07-01-PLAN.md — Fix SetupWizard link, empty-collection history save, middleware, dead code cleanup
+- [x] 07-01-PLAN.md — Fix SetupWizard link, empty-collection history save, middleware, dead code cleanup
 
 ## Progress
 
@@ -148,4 +148,4 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 | 4. QR Check-in Flow | 3/3 | ✓ Complete | 2026-02-08 |
 | 5. Beer Lookup | 3/3 | ✓ Complete | 2026-02-18 |
 | 6. Matching & Recommendations | 3/3 | ✓ Complete | 2026-03-15 |
-| 7. Audit Gap Fixes | 0/1 | Not started | - |
+| 7. Audit Gap Fixes | 1/1 | ✓ Complete | 2026-03-15 |
