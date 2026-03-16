@@ -17,7 +17,8 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [x] **Phase 3: Glass Collection Management** - Host glass library CRUD and reference guide
 - [x] **Phase 4: QR Check-in Flow** - QR code generation and drinker check-in via URL
 - [x] **Phase 5: Beer Lookup** - Beer search by name or style with info display
-- [ ] **Phase 6: Matching & Recommendations** - Style-to-glass mapping and ranked recommendations
+- [x] **Phase 6: Matching & Recommendations** - Style-to-glass mapping and ranked recommendations
+- [ ] **Phase 7: Audit Gap Fixes** - Fix broken links, edge cases, middleware, and dead code cleanup
 
 ## Phase Details
 
@@ -115,14 +116,29 @@ Plans:
 **Plans**: 3 plans
 
 Plans:
-- [ ] 06-01-PLAN.md — Fix beer style mismatches, matching engine with pairing rationale data
-- [ ] 06-02-PLAN.md — ResultsSheet component and check-in page matching integration
-- [ ] 06-03-PLAN.md — Beer history Firestore operations, /history page, dashboard link, save wiring
+- [x] 06-01-PLAN.md — Fix beer style mismatches, matching engine with pairing rationale data
+- [x] 06-02-PLAN.md — ResultsSheet component and check-in page matching integration
+- [x] 06-03-PLAN.md — Beer history Firestore operations, /history page, dashboard link, save wiring
+
+### Phase 7: Audit Gap Fixes
+**Goal**: Close all gaps identified by v1.0 milestone audit — fix broken links, edge cases, and inconsistencies
+**Depends on**: Phase 6
+**Requirements**: UX-02, HIST-01
+**Gap Closure**: Closes gaps from v1-MILESTONE-AUDIT.md
+**Success Criteria** (what must be TRUE):
+  1. SetupWizard "Add My First Glasses" navigates to /glasses (not 404)
+  2. Save-to-history button works even when host has empty collection
+  3. /history route is protected by middleware
+  4. No dead code (auth-actions.ts removed)
+**Plans**: 1 plan
+
+Plans:
+- [ ] 07-01-PLAN.md — Fix SetupWizard link, empty-collection history save, middleware, dead code cleanup
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
+Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
@@ -131,4 +147,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6
 | 3. Glass Collection Management | 3/3 | ✓ Complete | 2026-02-07 |
 | 4. QR Check-in Flow | 3/3 | ✓ Complete | 2026-02-08 |
 | 5. Beer Lookup | 3/3 | ✓ Complete | 2026-02-18 |
-| 6. Matching & Recommendations | 0/? | Not started | - |
+| 6. Matching & Recommendations | 3/3 | ✓ Complete | 2026-03-15 |
+| 7. Audit Gap Fixes | 0/1 | Not started | - |

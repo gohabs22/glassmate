@@ -16,23 +16,23 @@
 - [x] **QR-02**: Drinker can scan host's QR code to open host's collection page in browser
 
 ### Beer Lookup
-- [ ] **BEER-01**: Drinker can search for a beer by name
-- [ ] **BEER-02**: Drinker can browse/select a beer style manually
-- [ ] **BEER-03**: App displays beer info (name, style, ABV) after selection
+- [x] **BEER-01**: Drinker can search for a beer by name
+- [x] **BEER-02**: Drinker can browse/select a beer style manually
+- [x] **BEER-03**: App displays beer info (name, style, ABV) after selection
 
 ### Matching Engine
-- [ ] **MATCH-01**: App maps beer styles to ideal glass types using established pairing rules
-- [ ] **MATCH-02**: App ranks host's available glasses from best to worst fit for the selected beer
+- [x] **MATCH-01**: App maps beer styles to ideal glass types using established pairing rules
+- [x] **MATCH-02**: App ranks host's available glasses from best to worst fit for the selected beer
 
 ### Onboarding & UX
 - [x] **UX-01**: Logged-in users see a dashboard with "Manage My Glasses" and "Check In Somewhere"; anonymous visitors go straight to drinker/scan flow
-- [x] **UX-02**: Host sees a guided setup wizard (create account → add first glasses)
+- [ ] **UX-02**: Host sees a guided setup wizard (create account → add first glasses)
 - [x] **UX-03**: App includes a visual glass type reference guide with names and descriptions
 - [x] **UX-04**: Logged-in user can check in at another host's place as a drinker (dual-role support)
 
 ### Beer History
 - [ ] **HIST-01**: App records which beers a logged-in drinker has selected at each visit
-- [ ] **HIST-02**: Logged-in user can view their beer drinking history
+- [x] **HIST-02**: Logged-in user can view their beer drinking history
 
 ---
 
@@ -74,17 +74,17 @@
 | GLASS-03 | Phase 3 | 03-02, 03-03 | Complete |
 | QR-01 | Phase 4 | 04-01 | Complete |
 | QR-02 | Phase 4 | 04-02 | Complete |
-| BEER-01 | Phase 5 | — | Pending |
-| BEER-02 | Phase 5 | — | Pending |
-| BEER-03 | Phase 5 | — | Pending |
-| MATCH-01 | Phase 6 | — | Pending |
-| MATCH-02 | Phase 6 | — | Pending |
+| BEER-01 | Phase 5 | 05-01, 05-02 | Complete |
+| BEER-02 | Phase 5 | 05-02 | Complete |
+| BEER-03 | Phase 5 | 05-03 | Complete |
+| MATCH-01 | Phase 6 | 06-01 | Complete |
+| MATCH-02 | Phase 6 | 06-01, 06-02 | Complete |
 | UX-01 | Phase 2 | 02-02, 02-03 | Complete |
-| UX-02 | Phase 2 | 02-03 | Complete |
+| UX-02 | Phase 7 | 07-01 | Pending — gap closure |
 | UX-03 | Phase 3 | 03-01, 03-03 | Complete |
 | UX-04 | Phase 4 | 04-03 | Complete |
-| HIST-01 | Phase 6 | — | Pending |
-| HIST-02 | Phase 6 | — | Pending |
+| HIST-01 | Phase 7 | 07-01 | Pending — gap closure |
+| HIST-02 | Phase 6 | 06-03 | Complete |
 
 ---
-*Last updated: 2026-02-06 after platform pivot from iOS to web (Next.js + Firebase)*
+*Last updated: 2026-03-15 — gap closure phase added for UX-02, HIST-01*

@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-02-06)
 
 **Core value:** When a drinker scans a beer at a host's place, they instantly see the best available glass to use — the matching engine that connects beer style to host glassware is the ONE thing that must work.
-**Current focus:** Phase 6 in progress — matching engine complete, results UI next
+**Current focus:** All 6 phases complete — milestone 1 delivered
 
 ## Current Position
 
 Phase: 6 of 6 (Matching & Recommendations)
-Plan: 1 of 3 in current phase
-Status: Plan 06-01 complete
-Last activity: 2026-03-09 — Phase 6 plan 1 executed (matching engine)
+Plan: 3 of 3 in current phase
+Status: All plans complete
+Last activity: 2026-03-15 — Phase 6 fully executed and verified
 
-Progress: [█████████░] 88%
+Progress: [██████████] 100%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 15
+- Total plans completed: 18
 - Average duration: 5 min
-- Total execution time: 1.3 hours
+- Total execution time: ~1.7 hours
 
 **By Phase:**
 
@@ -32,11 +32,11 @@ Progress: [█████████░] 88%
 | 03-glass-collection-management | 3 | 9 min | 3 min |
 | 04-qr-check-in-flow | 3 | 17 min | 6 min |
 | 05-beer-lookup | 3 | 13 min | 4 min |
-| 06-matching-recommendations | 1 | 12 min | 12 min |
+| 06-matching-recommendations | 3 | 25 min | 8 min |
 
 **Recent Trend:**
-- Last 5 plans: 5min, 4min, 4min, 5min, 12min
-- Trend: Matching engine plan slightly longer due to 45 rationale entries
+- Last 5 plans: 4min, 5min, 12min, 5min, 5min
+- Trend: Stable execution times
 
 *Updated after each plan completion*
 
@@ -64,6 +64,7 @@ Recent decisions affecting current work:
 - useEffect for redirect on dashboard prevents setState-during-render warning
 - Firestore operations client-side to match auth pattern
 - users/{userId}/glasses subcollection for glass ownership
+- users/{userId}/history subcollection for beer history (opt-in save)
 - Presence-based glass collection (no duplicate prevention, one entry per type)
 - GlassCard component handles both catalog and collection modes
 - Amber-600 accent color for beer culture aesthetic
@@ -73,7 +74,7 @@ Recent decisions affecting current work:
 - QR code generation: 256px, error correction level M, react-qr-code library
 - Web Share API with graceful fallback to download-only on unsupported devices
 - URL.revokeObjectURL cleanup pattern to prevent memory leaks in blob downloads
-- Dashboard 3-column grid layout for action cards (Manage Glasses, QR Code, Check In)
+- Dashboard 4-card grid layout (Manage Glasses, QR Code, Check In, Beer History)
 - Dual-role UX: Logged-in users at another host's collection see confirmation dialog
 - Host scanning own QR code sees full drinker experience (no confirmation gate)
 - Firebase auth in public routes: Direct onAuthStateChanged pattern (no AuthProvider dependency)
@@ -81,19 +82,22 @@ Recent decisions affecting current work:
 - react-modal-sheet uses named import { Sheet }, detent "content" (not "content-height")
 - Headless UI Combobox for search autocomplete, use-debounce for 300ms debounce
 - Direct string matching for beer-to-glass pairing (no fuzzy matching needed)
-- Pairing rationale keyed as "glassId:beerStyle" for O(1) lookup
+- Pairing rationale keyed as "glassId:beerStyle" for O(1) lookup (45 entries + 8 generic)
 - Empty glass collection returns idealGlass from catalog (app always useful)
+- Two match tiers: Recommended (green dot) and Other (gray dot)
+- History entries show per-host beer count via client-side grouping
+- Anonymous users see signup nudge instead of save button
 
 ### Pending Todos
 
-None yet.
+None.
 
 ### Blockers/Concerns
 
-None yet.
+None.
 
 ## Session Continuity
 
-Last session: 2026-03-09
-Stopped at: Completed 06-01-PLAN.md (matching engine)
-Resume file: .planning/phases/06-matching-recommendations/06-01-SUMMARY.md
+Last session: 2026-03-15
+Stopped at: All phases complete — milestone 1 fully delivered
+Resume file: .planning/phases/06-matching-recommendations/VERIFICATION.md
