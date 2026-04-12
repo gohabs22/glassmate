@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-03-15)
 
 **Core value:** When a drinker scans a beer at a host's place, they instantly see the best available glass to use — the matching engine that connects beer style to host glassware is the ONE thing that must work.
-**Current focus:** v1.0 shipped. Next milestone not yet planned.
+**Current focus:** v2.0 Deployment — get the app publicly accessible
 
 ## Current Position
 
-Phase: 7 of 7
-Plan: 1 of 1 in current phase
-Status: v1.0 milestone complete
-Last activity: 2026-03-15 — v1.0 milestone archived
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-04-12 — Milestone v2.0 started
 
-Progress: [##########] 100%
+Progress: [░░░░░░░░░░] 0%
 
 ## Performance Metrics
 

@@ -26,9 +26,23 @@ When a drinker scans a beer at a host's place, they instantly see the best avail
 - Beer history recording and viewing for logged-in drinkers — v1.0
 - Guided setup wizard for new hosts — v1.0
 
+## Current Milestone: v2.0 Deployment
+
+**Goal:** Make the Beer Glass App publicly accessible via GitHub, Vercel, and production Firebase.
+
+**Target features:**
+- GitHub repository with remote origin configured
+- Vercel deployment connected to GitHub with automatic deploys
+- Production Firebase credentials wired into Vercel environment variables
+- Firebase Auth domain and Firestore security rules deployed to production
+- Working public URL (Vercel default, custom domain deferred)
+
 ### Active
 
-(None — next milestone not yet planned)
+- [ ] GitHub repository setup and code push
+- [ ] Vercel project creation and deployment pipeline
+- [ ] Production Firebase configuration (env vars, auth domain, Firestore rules)
+- [ ] Verify end-to-end flow works on public URL
 
 ### Out of Scope
 
@@ -39,6 +53,7 @@ When a drinker scans a beer at a host's place, they instantly see the best avail
 - AI/ML recommendation engine — style-based rules are well-established and sufficient
 - Multi-language support — English only
 - Barcode scanning — manual search/select works well
+- Custom domain — start with Vercel URL, add later if needed
 
 ## Context
 
@@ -73,4 +88,4 @@ When a drinker scans a beer at a host's place, they instantly see the best avail
 | Opt-in history save over auto-record | Respects user choice, avoids unwanted data collection | Good |
 
 ---
-*Last updated: 2026-03-15 after v1.0 milestone*
+*Last updated: 2026-04-12 after starting v2.0 milestone*
