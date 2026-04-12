@@ -2,24 +2,24 @@
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-15)
+See: .planning/PROJECT.md (updated 2026-04-12)
 
 **Core value:** When a drinker scans a beer at a host's place, they instantly see the best available glass to use — the matching engine that connects beer style to host glassware is the ONE thing that must work.
-**Current focus:** v2.0 Deployment — get the app publicly accessible
+**Current focus:** v2.0 Deployment — Phase 8: Source Control
 
 ## Current Position
 
-Phase: Not started (defining requirements)
-Plan: —
-Status: Defining requirements
-Last activity: 2026-04-12 — Milestone v2.0 started
+Phase: 8 of 10 (Source Control)
+Plan: 0 of 1 in current phase
+Status: Ready to plan
+Last activity: 2026-04-12 — v2.0 roadmap created (phases 8-10)
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [██████████░░░░░░░░░░] 53% (18/21 total plans v1.0+v2.0 estimate)
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 18
+- Total plans completed: 18 (v1.0)
 - Average duration: 5 min
 - Total execution time: ~2 hours
 
@@ -41,16 +41,22 @@ Progress: [░░░░░░░░░░] 0%
 
 See PROJECT.md Key Decisions table.
 
+Recent decisions affecting v2.0:
+- No custom domain for now — Vercel default URL is sufficient
+- Single environment (no staging) — acceptable for this project scale
+- Vercel for deployment (not Firebase Hosting) — zero-config, GitHub integration
+
 ### Pending Todos
 
 None.
 
 ### Blockers/Concerns
 
-None.
+- Firebase project must already exist (user confirmed) — need production credentials at Phase 10
+- Branch protection in Phase 8 requires GitHub repo to exist first
 
 ## Session Continuity
 
-Last session: 2026-03-15
-Stopped at: v1.0 milestone completed and archived
-Resume file: .planning/MILESTONES.md
+Last session: 2026-04-12
+Stopped at: v2.0 roadmap created, Phase 8 ready to plan
+Resume file: None

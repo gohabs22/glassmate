@@ -50,22 +50,22 @@ Requirements for public deployment. Each maps to roadmap phases.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| REPO-01 | — | Pending |
-| REPO-02 | — | Pending |
-| DEPLOY-01 | — | Pending |
-| DEPLOY-02 | — | Pending |
-| DEPLOY-03 | — | Pending |
-| FIRE-01 | — | Pending |
-| FIRE-02 | — | Pending |
-| FIRE-03 | — | Pending |
-| FIRE-04 | — | Pending |
-| VERIFY-01 | — | Pending |
+| REPO-01 | Phase 8 | Pending |
+| REPO-02 | Phase 8 | Pending |
+| DEPLOY-01 | Phase 9 | Pending |
+| DEPLOY-02 | Phase 9 | Pending |
+| DEPLOY-03 | Phase 9 | Pending |
+| FIRE-01 | Phase 10 | Pending |
+| FIRE-02 | Phase 10 | Pending |
+| FIRE-03 | Phase 10 | Pending |
+| FIRE-04 | Phase 10 | Pending |
+| VERIFY-01 | Phase 10 | Pending |
 
 **Coverage:**
 - v2 requirements: 10 total
-- Mapped to phases: 0
-- Unmapped: 10
+- Mapped to phases: 10
+- Unmapped: 0
 
 ---
 *Requirements defined: 2026-04-12*
-*Last updated: 2026-04-12 after initial definition*
+*Last updated: 2026-04-12 — traceability updated after v2.0 roadmap creation*
