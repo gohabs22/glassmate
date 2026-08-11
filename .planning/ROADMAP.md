@@ -40,10 +40,10 @@ Full details: .planning/milestones/v1.0-ROADMAP.md
   1. Codebase is accessible at a remote GitHub URL with full commit history
   2. Pushing directly to main is blocked — changes must go through a pull request
   3. The local repo has a remote origin configured and `git push` targets GitHub
-**Plans**: TBD
+**Plans**: 1 plan
 
 Plans:
-- [ ] 08-01: Push codebase to GitHub and configure branch protection
+- [ ] 08-01: Push codebase to GitHub, configure dev branch and branch protection
 
 ### Phase 9: Deployment Pipeline
 **Goal**: Every push to main automatically deploys to a live public URL, and every pull request gets a preview deploy
