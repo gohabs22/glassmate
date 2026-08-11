@@ -14,7 +14,7 @@ Push the existing codebase to GitHub and configure branch protection so direct p
 ## Implementation Decisions
 
 ### Repository setup
-- Private repository on GitHub
+- Public repository on GitHub (changed from private — Free plan doesn't support branch protection on private repos)
 - Repo name: `glassmate`
 - Add description and topics (e.g. "Beer-to-glass matching app", tags: nextjs, firebase, typescript)
 - Default branch stays `main`
@@ -30,7 +30,7 @@ Push the existing codebase to GitHub and configure branch protection so direct p
 - Push `.planning/` directory to GitHub (project history visible in repo)
 - Add a basic README with project name, one-line description, and setup instructions
 - Current `.gitignore` is sufficient (covers node_modules, .next, .env files)
-- No LICENSE file — private repo
+- No LICENSE file for now (can add later if needed)
 
 ### Collaboration model
 - Solo project — no collaborators to add
